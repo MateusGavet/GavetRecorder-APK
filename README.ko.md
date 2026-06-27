@@ -1,5 +1,16 @@
 # GavetRecorder APK
 
+<!-- GAVETRECORDER_DOWNLOAD_START -->
+
+## Download direto
+
+[**⬇️ 최신 APK 다운로드**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
+
+[**🌐 설치 가이드 열기**](https://mateusgavet.github.io/GavetRecorder-APK/)
+
+<!-- GAVETRECORDER_DOWNLOAD_END -->
+
+
 ## Background video recorder for Android
 
 GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.

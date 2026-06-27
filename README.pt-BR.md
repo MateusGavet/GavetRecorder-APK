@@ -1,5 +1,16 @@
 # GavetRecorder APK
 
+<!-- GAVETRECORDER_DOWNLOAD_START -->
+
+## Download direto
+
+[**⬇️ Baixar APK mais recente**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
+
+[**🌐 Abrir guia de instalação**](https://mateusgavet.github.io/GavetRecorder-APK/)
+
+<!-- GAVETRECORDER_DOWNLOAD_END -->
+
+
 ## Gravador de vídeo em segundo plano para Android
 
 GavetRecorder é um aplicativo Android desenvolvido para gravar vídeo em segundo plano usando um serviço em primeiro plano. Ele é indicado para usuários que precisam de gravação contínua, armazenamento local organizado e um processo simples de instalação por APK.
