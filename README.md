@@ -60,3 +60,38 @@ Curitiba - PR, Brasil
 ## Contato
 
 mateusgavet@gmail.com
+
+<!-- GAVETRECORDER_V16_START -->
+# GavetRecorder APK
+
+Aplicativo Android para gravação em segundo plano com foco em uso contínuo, gravação por segmentos e armazenamento local organizado.
+
+## Objetivo
+
+O GavetRecorder foi criado para gravar vídeo em segundo plano usando serviço em primeiro plano, com notificação fixa para compatibilidade com versões recentes do Android.
+
+## Recursos principais
+
+- Gravação em segundo plano com Foreground Service.
+- Notificação fixa enquanto o app está ativo.
+- Seleção de câmera.
+- Configuração de qualidade e FPS.
+- Gravação por segmentos.
+- Organização dos arquivos em `DCIM/GavetRecorder`.
+- Estrutura planejada para vídeos, mapas, rotas, logs e metadados.
+- Suporte a overlay de telemetria/GPS.
+- Base preparada para internacionalização em múltiplos idiomas.
+
+## Estrutura esperada
+
+- `Videos`
+- `Mapas`
+- `Rotas`
+- `Logs`
+- `Metadados`
+
+## V16
+
+A versão V16 adiciona internacionalização da interface e corrige recursos traduzíveis usados na tela principal, incluindo a opção de qualidade/FPS.
+
+<!-- GAVETRECORDER_V16_END -->
