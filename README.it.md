@@ -4,7 +4,7 @@
 
 ## Scaricare l’APK
 
-[**⬇️ Scaricare l’APK più recente**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
+[**⬇️ Aprire la pagina di download dell’APK**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
 
 [**🌐 Aprire la guida di installazione**](https://mateusgavet.github.io/GavetRecorder-APK/)
 

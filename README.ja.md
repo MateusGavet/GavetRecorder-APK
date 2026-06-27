@@ -4,7 +4,7 @@
 
 ## APK をダウンロード
 
-[**⬇️ 最新 APK をダウンロード**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
+[**⬇️ APK ダウンロードページを開く**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
 
 [**🌐 インストールガイドを開く**](https://mateusgavet.github.io/GavetRecorder-APK/)
 

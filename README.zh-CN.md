@@ -4,7 +4,7 @@
 
 ## 下载 APK
 
-[**⬇️ 下载最新 APK**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
+[**⬇️ 打开 APK 下载页面**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
 
 [**🌐 打开安装指南**](https://mateusgavet.github.io/GavetRecorder-APK/)
 
@@ -32,7 +32,7 @@ GavetRecorder 是一款 Android 应用，通过前台服务在后台录制视频
 
 ## 下载 APK
 
-请通过本页顶部的按钮直接下载最新 APK。下载完成后，在 Android 设备上打开该文件即可开始安装。
+请通过本页顶部的按钮直接打开 APK 下载页面。下载完成后，在 Android 设备上打开该文件即可开始安装。
 
 ## 要求
 
