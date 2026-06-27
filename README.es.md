@@ -2,7 +2,7 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_START -->
 
-## Download direto
+## Descargar el APK
 
 [**⬇️ Descargar APK más reciente**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
 
@@ -10,14 +10,13 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
-
 ## Grabador de video en segundo plano para Android
 
-GavetRecorder es una aplicación Android diseñada para grabar video en segundo plano mediante un servicio en primer plano. Está pensada para usuarios que necesitan grabación continua, almacenamiento local organizado y un proceso sencillo de instalación por APK.
+GavetRecorder es una aplicación Android diseñada para grabar video en segundo plano mediante un servicio en primer plano. Está pensada para usuarios que necesitan grabación local continua, instalación manual sencilla y almacenamiento organizado en el dispositivo.
 
-> **Important:** Este APK se distribuye fuera de Google Play Store. Para instalarlo, Android puede solicitar permitir la instalación desde fuentes desconocidas.
+> **Important:** Este APK se distribuye fuera de Google Play Store. Android puede solicitar permiso para instalar aplicaciones de fuentes desconocidas antes de la instalación.
 
-## Languages
+## Idiomas
 
 - [English](README.md)
 - [Português](README.pt-BR.md)
@@ -33,47 +32,48 @@ GavetRecorder es una aplicación Android diseñada para grabar video en segundo 
 
 ## Descargar el APK
 
-Descarga el archivo APK más reciente desde la release del repositorio o desde el archivo APK disponible en el proyecto.
+Descarga el APK más reciente directamente desde el botón superior. Después de descargarlo, abre el archivo en tu dispositivo Android para iniciar la instalación.
 
 ## Requisitos
 
 - Dispositivo Android compatible con instalación manual de APK.
 - Permiso para instalar aplicaciones de fuentes desconocidas.
 - Permiso de cámara.
-- Permiso de micrófono si la grabación de audio está activada.
-- Permiso de ubicación si se usan GPS o rutas.
-- Espacio libre suficiente para guardar videos.
+- Permiso de micrófono si la grabación con audio está activada.
+- Permiso de notificaciones para mantener visible el servicio de grabación en primer plano.
+- Espacio libre suficiente para almacenar los videos.
 
 ## Cómo instalar
 
-1. Descarga el archivo APK en el dispositivo Android.
-2. Abre el APK desde el administrador de archivos o desde la notificación de descarga.
-3. Si Android bloquea la instalación, entra en Configuración y permite instalar desde esta fuente.
-4. Vuelve al instalador y toca Instalar.
-5. Abre GavetRecorder después de la instalación.
-6. Concede los permisos solicitados por Android.
-7. Inicia la grabación desde la aplicación.
+1. Descarga el APK usando el botón superior de esta página.
+2. Abre el APK descargado en el dispositivo Android.
+3. Si Android bloquea la instalación, toca Configuración.
+4. Permite instalar aplicaciones desde esta fuente.
+5. Vuelve al instalador y toca Instalar.
+6. Abre GavetRecorder.
+7. Concede los permisos solicitados.
+8. Inicia la grabación desde la aplicación.
 
 ## Permisos utilizados
 
 - Cámara: necesaria para grabar video.
-- Micrófono: necesario solo cuando el audio está activado.
-- Ubicación: usada solo para GPS, rutas o telemetría cuando esté disponible.
-- Notificaciones: necesarias para mantener visible el servicio en primer plano.
-- Almacenamiento o acceso a medios: usado para guardar y acceder a videos.
+- Micrófono: necesario solo cuando la grabación de audio está activada.
+- Notificaciones: necesarias para mantener activo el servicio de grabación en primer plano.
+- Almacenamiento o acceso a medios: usado para guardar y acceder a videos grabados.
+- Ubicación: usada solo si las funciones de GPS, ruta o telemetría están activadas.
 
 ## Uso básico
 
 - Abre la aplicación.
 - Elige la cámara, calidad y FPS deseados.
 - Inicia la grabación.
-- Mantén activa la notificación mientras la grabación esté en curso.
+- Mantén activa la notificación de grabación.
 - Detén la grabación al finalizar.
-- Accede a los videos guardados en el almacenamiento del dispositivo.
+- Encuentra los videos grabados en el almacenamiento del dispositivo.
 
 ## Dónde se guardan las grabaciones
 
-Las grabaciones se guardan localmente en el dispositivo. La carpeta esperada es:
+Las grabaciones se guardan localmente en el dispositivo, en la carpeta esperada:
 
 ```text
 DCIM/GavetRecorder/
@@ -82,14 +82,14 @@ DCIM/GavetRecorder/
 
 ## Privacidad
 
-GavetRecorder está diseñado para grabación local. Los archivos permanecen en el dispositivo salvo que el usuario los comparta, mueva o suba manualmente.
+GavetRecorder está diseñado para grabación local. Los archivos grabados permanecen en el dispositivo salvo que el usuario los comparta, mueva o suba manualmente.
 
 ## Solución de problemas
 
-- Si el APK no se instala, verifica la instalación desde fuentes desconocidas.
+- Si el APK no se instala, verifica si está permitida la instalación desde fuentes desconocidas.
 - Si la grabación no inicia, revisa los permisos de cámara y micrófono.
 - Si la grabación en segundo plano se detiene, desactiva la optimización de batería para la app.
-- Si los videos no aparecen, revisa la carpeta de la aplicación en el almacenamiento.
+- Si los videos no aparecen, revisa la carpeta GavetRecorder en el almacenamiento del dispositivo.
 - Si Android muestra una advertencia de seguridad, confirma que el APK proviene del repositorio oficial.
 
 ## Instalar usando ADB
@@ -101,7 +101,3 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ## Versión actual
 
 La V16 incluye soporte de interfaz multilingüe y corrige recursos traducidos usados en la pantalla principal, incluida la opción Calidad/FPS.
-
-## GitHub Pages
-
-The web documentation can automatically detect the browser language through `docs/index.html`.

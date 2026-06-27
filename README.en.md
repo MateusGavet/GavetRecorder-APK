@@ -2,7 +2,7 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_START -->
 
-## Download direto
+## Download the APK
 
 [**⬇️ Download latest APK**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
 
@@ -10,12 +10,11 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
-
 ## Background video recorder for Android
 
-GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.
+GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous local video recording, simple manual installation and organized storage on the device.
 
-> **Important:** This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.
+> **Important:** This APK is distributed outside the Google Play Store. Android may ask you to allow installation from unknown apps before installing it.
 
 ## Languages
 
@@ -33,47 +32,48 @@ GavetRecorder is an Android application designed to record video in the backgrou
 
 ## Download the APK
 
-Download the latest APK file from the repository release or from the APK file provided in the project.
+Download the latest APK directly from the button above. After downloading, open the file on your Android device to start the installation.
 
 ## Requirements
 
 - Android device compatible with manual APK installation.
 - Permission to install apps from unknown sources.
 - Camera permission.
-- Microphone permission, if audio recording is enabled.
-- Location permission, if GPS or route data is used.
+- Microphone permission if audio recording is enabled.
+- Notification permission to keep the foreground recording service visible.
 - Enough free storage space for video files.
 
 ## How to install
 
-1. Download the APK file to your Android device.
-2. Open the APK file using the file manager or browser download notification.
-3. If Android blocks the installation, tap Settings and allow installation from this source.
-4. Return to the installer and tap Install.
-5. Open GavetRecorder after installation.
-6. Grant the requested permissions when Android asks.
-7. Start recording from inside the app.
+1. Download the APK using the button at the top of this page.
+2. Open the downloaded APK on your Android device.
+3. If Android blocks the installation, tap Settings.
+4. Allow installation from this source.
+5. Return to the installer and tap Install.
+6. Open GavetRecorder.
+7. Grant the requested permissions.
+8. Start recording from inside the app.
 
 ## Permissions used
 
 - Camera: required to record video.
 - Microphone: required only when audio recording is enabled.
-- Location: used only for GPS, route or telemetry features when available.
-- Notifications: required to keep the foreground recording service visible.
-- Storage or media access: used to save and access recorded files.
+- Notifications: required to keep the recording service active in the foreground.
+- Storage or media access: used to save and access recorded videos.
+- Location: used only if GPS, route or telemetry features are enabled.
 
 ## Basic usage
 
 - Open the app.
-- Choose the desired camera, quality and FPS options.
+- Choose the desired camera, quality and FPS.
 - Start the recording.
-- Keep the foreground notification active while recording.
+- Keep the recording notification active.
 - Stop the recording when finished.
-- Access the recorded videos in the device storage.
+- Find the recorded videos in the device storage.
 
 ## Where recordings are saved
 
-Recordings are saved locally on the device. The expected folder is:
+Recordings are saved locally on the device in the expected folder:
 
 ```text
 DCIM/GavetRecorder/
@@ -86,11 +86,11 @@ GavetRecorder is designed for local recording. Recorded files remain on the devi
 
 ## Troubleshooting
 
-- If the APK does not install, check whether installation from unknown apps is allowed.
+- If the APK does not install, check whether unknown app installation is allowed.
 - If recording does not start, verify camera and microphone permissions.
 - If background recording stops, disable battery optimization for the app.
-- If videos are not visible, check the app folder in the device storage.
-- If Android shows a security warning, confirm that the APK came from the official project repository.
+- If videos are not visible, check the GavetRecorder folder in the device storage.
+- If Android shows a security warning, confirm that the APK came from the official repository.
 
 ## Install using ADB
 
@@ -100,8 +100,4 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Current version
 
-V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS.
-
-## GitHub Pages
-
-The web documentation can automatically detect the browser language through `docs/index.html`.
+V16 includes multilingual interface support and fixes translated resources used on the main screen, including Quality/FPS.

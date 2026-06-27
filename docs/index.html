@@ -9,71 +9,69 @@
       color-scheme: dark;
       --bg: #0b0f19;
       --card: #151b2a;
-      --card2: #101624;
       --border: #2b3548;
       --text: #f8fafc;
       --muted: #b6c2d2;
       --accent: #38bdf8;
       --accent2: #0ea5e9;
     }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(14,165,233,.18), transparent 32rem),
-        var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.65;
     }
     main {
       max-width: 980px;
       margin: 0 auto;
-      padding: 48px 18px 80px;
+      padding: 42px 18px 80px;
     }
-    .hero {
-      padding: 34px;
+    .hero, .card {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(21,27,42,.94), rgba(16,22,36,.94));
-      box-shadow: 0 24px 70px rgba(0,0,0,.25);
+      border-radius: 22px;
+      padding: 24px;
+      margin: 18px 0;
     }
     h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
       margin: 0 0 8px;
-      font-size: clamp(2.1rem, 6vw, 4rem);
       letter-spacing: -0.04em;
     }
     h2 {
       margin-top: 0;
-      letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 1.25rem;
       color: var(--accent);
-      margin: 0 0 14px;
+      font-size: 1.25rem;
       font-weight: 700;
     }
-    .muted { color: var(--muted); }
+    .muted {
+      color: var(--muted);
+    }
     .notice {
-      margin-top: 20px;
-      padding: 16px 18px;
-      border-radius: 16px;
-      background: rgba(56,189,248,.1);
       border: 1px solid rgba(56,189,248,.35);
+      background: rgba(56,189,248,.1);
+      padding: 14px;
+      border-radius: 14px;
+      margin: 18px 0;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
     }
-    .card {
-      padding: 24px;
-      border-radius: 20px;
-      background: rgba(21,27,42,.92);
-      border: 1px solid var(--border);
+    .linkbtn {
+      display: inline-block;
+      background: var(--accent2);
+      color: white;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
     }
-    .wide { grid-column: 1 / -1; }
     button {
       border: 1px solid #334155;
       background: #111827;
@@ -86,157 +84,137 @@
     button.active {
       background: var(--accent2);
       border-color: var(--accent);
-      color: white;
     }
-    ol, ul { padding-left: 1.3rem; }
-    li { margin: 7px 0; }
     pre {
-      margin: 0;
-      overflow: auto;
-      padding: 16px;
-      border-radius: 14px;
       background: #020617;
       border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 14px;
+      overflow: auto;
     }
-    code {
-      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
-      color: #e2e8f0;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .linkbtn {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-      background: var(--accent2);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-    @media (max-width: 760px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 24px; }
+    li {
+      margin: 7px 0;
     }
   </style>
 </head>
 <body>
   <main id="app"></main>
-
   <script>
     const translations = {
   "en": {
     "file": "README.en.md",
     "label": "English",
-    "title": "GavetRecorder APK",
+    "download_direct": "Download latest APK",
+    "open_guide": "Open installation guide",
     "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
+    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous local video recording, simple manual installation and organized storage on the device.",
+    "important": "This APK is distributed outside the Google Play Store. Android may ask you to allow installation from unknown apps before installing it.",
+    "languages": "Languages",
     "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
+    "download_text": "Download the latest APK directly from the button above. After downloading, open the file on your Android device to start the installation.",
     "requirements": "Requirements",
     "requirements_list": [
       "Android device compatible with manual APK installation.",
       "Permission to install apps from unknown sources.",
       "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
+      "Microphone permission if audio recording is enabled.",
+      "Notification permission to keep the foreground recording service visible.",
       "Enough free storage space for video files."
     ],
     "install": "How to install",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
+      "Download the APK using the button at the top of this page.",
+      "Open the downloaded APK on your Android device.",
+      "If Android blocks the installation, tap Settings.",
+      "Allow installation from this source.",
       "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
+      "Open GavetRecorder.",
+      "Grant the requested permissions.",
       "Start recording from inside the app."
     ],
     "permissions": "Permissions used",
     "permissions_list": [
       "Camera: required to record video.",
       "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "Notifications: required to keep the recording service active in the foreground.",
+      "Storage or media access: used to save and access recorded videos.",
+      "Location: used only if GPS, route or telemetry features are enabled."
     ],
     "usage": "Basic usage",
     "usage_list": [
       "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
+      "Choose the desired camera, quality and FPS.",
       "Start the recording.",
-      "Keep the foreground notification active while recording.",
+      "Keep the recording notification active.",
       "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "Find the recorded videos in the device storage."
     ],
     "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
+    "storage_text": "Recordings are saved locally on the device in the expected folder:",
     "privacy": "Privacy",
     "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
     "troubleshooting": "Troubleshooting",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
+      "If the APK does not install, check whether unknown app installation is allowed.",
       "If recording does not start, verify camera and microphone permissions.",
       "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "If videos are not visible, check the GavetRecorder folder in the device storage.",
+      "If Android shows a security warning, confirm that the APK came from the official repository."
     ],
     "adb": "Install using ADB",
     "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "version_text": "V16 includes multilingual interface support and fixes translated resources used on the main screen, including Quality/FPS."
   },
   "pt": {
     "file": "README.pt-BR.md",
     "label": "Português",
-    "title": "GavetRecorder APK",
+    "download_direct": "Baixar APK mais recente",
+    "open_guide": "Abrir guia de instalação",
     "subtitle": "Gravador de vídeo em segundo plano para Android",
-    "description": "GavetRecorder é um aplicativo Android desenvolvido para gravar vídeo em segundo plano usando um serviço em primeiro plano. Ele é indicado para usuários que precisam de gravação contínua, armazenamento local organizado e um processo simples de instalação por APK.",
-    "notice": "Este APK é distribuído fora da Google Play Store. Para instalar, o Android pode solicitar a liberação da instalação por fontes desconhecidas.",
+    "description": "GavetRecorder é um aplicativo Android desenvolvido para gravar vídeo em segundo plano usando um serviço em primeiro plano. Ele é indicado para quem precisa de gravação contínua local, instalação manual simples e armazenamento organizado no dispositivo.",
+    "important": "Este APK é distribuído fora da Google Play Store. Antes da instalação, o Android pode solicitar a liberação para instalar aplicativos de fontes desconhecidas.",
+    "languages": "Idiomas",
     "download": "Baixar o APK",
-    "download_text": "Baixe o arquivo APK mais recente pela release do repositório ou pelo arquivo APK disponibilizado no projeto.",
+    "download_text": "Baixe o APK mais recente diretamente pelo botão acima. Depois do download, abra o arquivo no celular Android para iniciar a instalação.",
     "requirements": "Requisitos",
     "requirements_list": [
       "Celular Android compatível com instalação manual de APK.",
       "Permissão para instalar aplicativos de fontes desconhecidas.",
       "Permissão de câmera.",
-      "Permissão de microfone, caso a gravação com áudio esteja ativada.",
-      "Permissão de localização, caso recursos de GPS ou rota sejam usados.",
+      "Permissão de microfone se a gravação com áudio estiver ativada.",
+      "Permissão de notificações para manter o serviço de gravação em primeiro plano visível.",
       "Espaço livre suficiente para armazenar os vídeos."
     ],
     "install": "Como instalar",
     "install_steps": [
-      "Baixe o arquivo APK no celular Android.",
-      "Abra o APK pelo gerenciador de arquivos ou pela notificação de download do navegador.",
-      "Se o Android bloquear a instalação, toque em Configurações e permita instalar por esta fonte.",
-      "Volte para a tela de instalação e toque em Instalar.",
-      "Abra o GavetRecorder após a instalação.",
-      "Conceda as permissões solicitadas pelo Android.",
+      "Baixe o APK usando o botão no topo desta página.",
+      "Abra o APK baixado no celular Android.",
+      "Se o Android bloquear a instalação, toque em Configurações.",
+      "Permita instalar aplicativos por esta fonte.",
+      "Volte para a instalação e toque em Instalar.",
+      "Abra o GavetRecorder.",
+      "Conceda as permissões solicitadas.",
       "Inicie a gravação dentro do aplicativo."
     ],
     "permissions": "Permissões utilizadas",
     "permissions_list": [
       "Câmera: necessária para gravar vídeo.",
       "Microfone: necessária apenas quando a gravação de áudio estiver ativada.",
-      "Localização: usada apenas para GPS, rotas ou telemetria quando o recurso estiver disponível.",
-      "Notificações: necessária para manter o serviço de gravação em primeiro plano visível.",
-      "Armazenamento ou acesso à mídia: usado para salvar e acessar os vídeos gravados."
+      "Notificações: necessária para manter o serviço de gravação ativo em primeiro plano.",
+      "Armazenamento ou acesso à mídia: usado para salvar e acessar os vídeos gravados.",
+      "Localização: usada apenas se recursos de GPS, rota ou telemetria estiverem ativados."
     ],
     "usage": "Uso básico",
     "usage_list": [
       "Abra o aplicativo.",
       "Escolha a câmera, qualidade e FPS desejados.",
       "Inicie a gravação.",
-      "Mantenha a notificação de gravação ativa enquanto o app estiver gravando.",
+      "Mantenha a notificação de gravação ativa.",
       "Pare a gravação quando finalizar.",
-      "Acesse os vídeos gravados no armazenamento do dispositivo."
+      "Encontre os vídeos gravados no armazenamento do dispositivo."
     ],
     "storage": "Onde as gravações ficam salvas",
-    "storage_text": "As gravações são salvas localmente no dispositivo. A pasta esperada é:",
+    "storage_text": "As gravações são salvas localmente no dispositivo, na pasta esperada:",
     "privacy": "Privacidade",
     "privacy_text": "O GavetRecorder foi pensado para gravação local. Os arquivos gravados permanecem no dispositivo, a menos que o próprio usuário compartilhe, mova ou envie os vídeos manualmente.",
     "troubleshooting": "Solução de problemas",
@@ -244,8 +222,8 @@
       "Se o APK não instalar, verifique se a instalação por fontes desconhecidas está liberada.",
       "Se a gravação não iniciar, confira as permissões de câmera e microfone.",
       "Se a gravação em segundo plano parar, desative a otimização de bateria para o app.",
-      "Se os vídeos não aparecerem, verifique a pasta do aplicativo no armazenamento.",
-      "Se o Android mostrar alerta de segurança, confirme que o APK veio do repositório oficial do projeto."
+      "Se os vídeos não aparecerem, verifique a pasta GavetRecorder no armazenamento do dispositivo.",
+      "Se o Android mostrar alerta de segurança, confirme que o APK veio do repositório oficial."
     ],
     "adb": "Instalar usando ADB",
     "version": "Versão atual",
@@ -254,58 +232,61 @@
   "es": {
     "file": "README.es.md",
     "label": "Español",
-    "title": "GavetRecorder APK",
+    "download_direct": "Descargar APK más reciente",
+    "open_guide": "Abrir guía de instalación",
     "subtitle": "Grabador de video en segundo plano para Android",
-    "description": "GavetRecorder es una aplicación Android diseñada para grabar video en segundo plano mediante un servicio en primer plano. Está pensada para usuarios que necesitan grabación continua, almacenamiento local organizado y un proceso sencillo de instalación por APK.",
-    "notice": "Este APK se distribuye fuera de Google Play Store. Para instalarlo, Android puede solicitar permitir la instalación desde fuentes desconocidas.",
+    "description": "GavetRecorder es una aplicación Android diseñada para grabar video en segundo plano mediante un servicio en primer plano. Está pensada para usuarios que necesitan grabación local continua, instalación manual sencilla y almacenamiento organizado en el dispositivo.",
+    "important": "Este APK se distribuye fuera de Google Play Store. Android puede solicitar permiso para instalar aplicaciones de fuentes desconocidas antes de la instalación.",
+    "languages": "Idiomas",
     "download": "Descargar el APK",
-    "download_text": "Descarga el archivo APK más reciente desde la release del repositorio o desde el archivo APK disponible en el proyecto.",
+    "download_text": "Descarga el APK más reciente directamente desde el botón superior. Después de descargarlo, abre el archivo en tu dispositivo Android para iniciar la instalación.",
     "requirements": "Requisitos",
     "requirements_list": [
       "Dispositivo Android compatible con instalación manual de APK.",
       "Permiso para instalar aplicaciones de fuentes desconocidas.",
       "Permiso de cámara.",
-      "Permiso de micrófono si la grabación de audio está activada.",
-      "Permiso de ubicación si se usan GPS o rutas.",
-      "Espacio libre suficiente para guardar videos."
+      "Permiso de micrófono si la grabación con audio está activada.",
+      "Permiso de notificaciones para mantener visible el servicio de grabación en primer plano.",
+      "Espacio libre suficiente para almacenar los videos."
     ],
     "install": "Cómo instalar",
     "install_steps": [
-      "Descarga el archivo APK en el dispositivo Android.",
-      "Abre el APK desde el administrador de archivos o desde la notificación de descarga.",
-      "Si Android bloquea la instalación, entra en Configuración y permite instalar desde esta fuente.",
+      "Descarga el APK usando el botón superior de esta página.",
+      "Abre el APK descargado en el dispositivo Android.",
+      "Si Android bloquea la instalación, toca Configuración.",
+      "Permite instalar aplicaciones desde esta fuente.",
       "Vuelve al instalador y toca Instalar.",
-      "Abre GavetRecorder después de la instalación.",
-      "Concede los permisos solicitados por Android.",
+      "Abre GavetRecorder.",
+      "Concede los permisos solicitados.",
       "Inicia la grabación desde la aplicación."
     ],
     "permissions": "Permisos utilizados",
     "permissions_list": [
       "Cámara: necesaria para grabar video.",
-      "Micrófono: necesario solo cuando el audio está activado.",
-      "Ubicación: usada solo para GPS, rutas o telemetría cuando esté disponible.",
-      "Notificaciones: necesarias para mantener visible el servicio en primer plano.",
-      "Almacenamiento o acceso a medios: usado para guardar y acceder a videos."
+      "Micrófono: necesario solo cuando la grabación de audio está activada.",
+      "Notificaciones: necesarias para mantener activo el servicio de grabación en primer plano.",
+      "Almacenamiento o acceso a medios: usado para guardar y acceder a videos grabados.",
+      "Ubicación: usada solo si las funciones de GPS, ruta o telemetría están activadas."
     ],
     "usage": "Uso básico",
     "usage_list": [
       "Abre la aplicación.",
       "Elige la cámara, calidad y FPS deseados.",
       "Inicia la grabación.",
-      "Mantén activa la notificación mientras la grabación esté en curso.",
+      "Mantén activa la notificación de grabación.",
       "Detén la grabación al finalizar.",
-      "Accede a los videos guardados en el almacenamiento del dispositivo."
+      "Encuentra los videos grabados en el almacenamiento del dispositivo."
     ],
     "storage": "Dónde se guardan las grabaciones",
-    "storage_text": "Las grabaciones se guardan localmente en el dispositivo. La carpeta esperada es:",
+    "storage_text": "Las grabaciones se guardan localmente en el dispositivo, en la carpeta esperada:",
     "privacy": "Privacidad",
-    "privacy_text": "GavetRecorder está diseñado para grabación local. Los archivos permanecen en el dispositivo salvo que el usuario los comparta, mueva o suba manualmente.",
+    "privacy_text": "GavetRecorder está diseñado para grabación local. Los archivos grabados permanecen en el dispositivo salvo que el usuario los comparta, mueva o suba manualmente.",
     "troubleshooting": "Solución de problemas",
     "troubleshooting_list": [
-      "Si el APK no se instala, verifica la instalación desde fuentes desconocidas.",
+      "Si el APK no se instala, verifica si está permitida la instalación desde fuentes desconocidas.",
       "Si la grabación no inicia, revisa los permisos de cámara y micrófono.",
       "Si la grabación en segundo plano se detiene, desactiva la optimización de batería para la app.",
-      "Si los videos no aparecen, revisa la carpeta de la aplicación en el almacenamiento.",
+      "Si los videos no aparecen, revisa la carpeta GavetRecorder en el almacenamiento del dispositivo.",
       "Si Android muestra una advertencia de seguridad, confirma que el APK proviene del repositorio oficial."
     ],
     "adb": "Instalar usando ADB",
@@ -315,490 +296,514 @@
   "fr": {
     "file": "README.fr.md",
     "label": "Français",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "Télécharger le dernier APK",
+    "open_guide": "Ouvrir le guide d’installation",
+    "subtitle": "Enregistreur vidéo en arrière-plan pour Android",
+    "description": "GavetRecorder est une application Android conçue pour enregistrer des vidéos en arrière-plan à l’aide d’un service de premier plan. Elle s’adresse aux utilisateurs qui ont besoin d’un enregistrement local continu, d’une installation manuelle simple et d’un stockage organisé sur l’appareil.",
+    "important": "Cet APK est distribué en dehors du Google Play Store. Android peut demander l’autorisation d’installer des applications provenant de sources inconnues avant l’installation.",
+    "languages": "Langues",
+    "download": "Télécharger l’APK",
+    "download_text": "Téléchargez le dernier APK directement depuis le bouton en haut de cette page. Après le téléchargement, ouvrez le fichier sur votre appareil Android pour lancer l’installation.",
+    "requirements": "Prérequis",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "Appareil Android compatible avec l’installation manuelle d’APK.",
+      "Autorisation d’installer des applications provenant de sources inconnues.",
+      "Autorisation d’accès à la caméra.",
+      "Autorisation d’accès au microphone si l’enregistrement audio est activé.",
+      "Autorisation de notifications pour garder visible le service d’enregistrement au premier plan.",
+      "Espace de stockage suffisant pour les fichiers vidéo."
     ],
-    "install": "How to install",
+    "install": "Comment installer",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "Téléchargez l’APK avec le bouton en haut de cette page.",
+      "Ouvrez l’APK téléchargé sur votre appareil Android.",
+      "Si Android bloque l’installation, appuyez sur Paramètres.",
+      "Autorisez l’installation depuis cette source.",
+      "Revenez à l’installateur et appuyez sur Installer.",
+      "Ouvrez GavetRecorder.",
+      "Accordez les autorisations demandées.",
+      "Démarrez l’enregistrement depuis l’application."
     ],
-    "permissions": "Permissions used",
+    "permissions": "Autorisations utilisées",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "Caméra : nécessaire pour enregistrer la vidéo.",
+      "Microphone : nécessaire uniquement lorsque l’enregistrement audio est activé.",
+      "Notifications : nécessaires pour maintenir le service d’enregistrement actif au premier plan.",
+      "Stockage ou accès aux médias : utilisé pour enregistrer et accéder aux vidéos.",
+      "Localisation : utilisée uniquement si les fonctions GPS, itinéraire ou télémétrie sont activées."
     ],
-    "usage": "Basic usage",
+    "usage": "Utilisation de base",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "Ouvrez l’application.",
+      "Choisissez la caméra, la qualité et les FPS souhaités.",
+      "Démarrez l’enregistrement.",
+      "Gardez la notification d’enregistrement active.",
+      "Arrêtez l’enregistrement lorsque vous avez terminé.",
+      "Retrouvez les vidéos enregistrées dans le stockage de l’appareil."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "Où les enregistrements sont sauvegardés",
+    "storage_text": "Les enregistrements sont sauvegardés localement sur l’appareil, dans le dossier prévu :",
+    "privacy": "Confidentialité",
+    "privacy_text": "GavetRecorder est conçu pour l’enregistrement local. Les fichiers enregistrés restent sur l’appareil sauf si l’utilisateur les partage, les déplace ou les téléverse manuellement.",
+    "troubleshooting": "Dépannage",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "Si l’APK ne s’installe pas, vérifiez que l’installation depuis des sources inconnues est autorisée.",
+      "Si l’enregistrement ne démarre pas, vérifiez les autorisations caméra et microphone.",
+      "Si l’enregistrement en arrière-plan s’arrête, désactivez l’optimisation de batterie pour l’application.",
+      "Si les vidéos ne sont pas visibles, vérifiez le dossier GavetRecorder dans le stockage de l’appareil.",
+      "Si Android affiche un avertissement de sécurité, confirmez que l’APK provient du dépôt officiel."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "Installer avec ADB",
+    "version": "Version actuelle",
+    "version_text": "La V16 ajoute la prise en charge de l’interface multilingue et corrige les ressources traduites utilisées sur l’écran principal, y compris Qualité/FPS."
   },
   "de": {
     "file": "README.de.md",
     "label": "Deutsch",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "Neueste APK herunterladen",
+    "open_guide": "Installationsanleitung öffnen",
+    "subtitle": "Videoaufnahme im Hintergrund für Android",
+    "description": "GavetRecorder ist eine Android-App zur Videoaufnahme im Hintergrund über einen Vordergrunddienst. Sie richtet sich an Nutzer, die kontinuierliche lokale Aufnahmen, eine einfache manuelle Installation und eine geordnete Speicherung auf dem Gerät benötigen.",
+    "important": "Diese APK wird außerhalb des Google Play Store verteilt. Android kann vor der Installation verlangen, dass die Installation aus unbekannten Quellen erlaubt wird.",
+    "languages": "Sprachen",
+    "download": "APK herunterladen",
+    "download_text": "Laden Sie die neueste APK direkt über die Schaltfläche oben herunter. Öffnen Sie anschließend die Datei auf Ihrem Android-Gerät, um die Installation zu starten.",
+    "requirements": "Voraussetzungen",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "Android-Gerät mit Unterstützung für manuelle APK-Installation.",
+      "Erlaubnis zur Installation von Apps aus unbekannten Quellen.",
+      "Kameraberechtigung.",
+      "Mikrofonberechtigung, wenn Audioaufnahme aktiviert ist.",
+      "Benachrichtigungsberechtigung, damit der Aufnahmedienst im Vordergrund sichtbar bleibt.",
+      "Ausreichend freier Speicherplatz für Videodateien."
     ],
-    "install": "How to install",
+    "install": "Installation",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "Laden Sie die APK über die Schaltfläche oben auf dieser Seite herunter.",
+      "Öffnen Sie die heruntergeladene APK auf dem Android-Gerät.",
+      "Wenn Android die Installation blockiert, tippen Sie auf Einstellungen.",
+      "Erlauben Sie die Installation aus dieser Quelle.",
+      "Kehren Sie zum Installationsbildschirm zurück und tippen Sie auf Installieren.",
+      "Öffnen Sie GavetRecorder.",
+      "Erteilen Sie die angeforderten Berechtigungen.",
+      "Starten Sie die Aufnahme in der App."
     ],
-    "permissions": "Permissions used",
+    "permissions": "Verwendete Berechtigungen",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "Kamera: erforderlich für die Videoaufnahme.",
+      "Mikrofon: nur erforderlich, wenn Audioaufnahme aktiviert ist.",
+      "Benachrichtigungen: erforderlich, um den Aufnahmedienst im Vordergrund aktiv zu halten.",
+      "Speicher- oder Medienzugriff: wird zum Speichern und Öffnen der aufgenommenen Videos verwendet.",
+      "Standort: nur verwendet, wenn GPS-, Routen- oder Telemetriefunktionen aktiviert sind."
     ],
-    "usage": "Basic usage",
+    "usage": "Grundlegende Nutzung",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "Öffnen Sie die App.",
+      "Wählen Sie Kamera, Qualität und FPS.",
+      "Starten Sie die Aufnahme.",
+      "Lassen Sie die Aufnahmenachricht aktiv.",
+      "Beenden Sie die Aufnahme nach Bedarf.",
+      "Finden Sie die aufgenommenen Videos im Gerätespeicher."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "Speicherort der Aufnahmen",
+    "storage_text": "Die Aufnahmen werden lokal auf dem Gerät im vorgesehenen Ordner gespeichert:",
+    "privacy": "Datenschutz",
+    "privacy_text": "GavetRecorder ist für lokale Aufnahmen konzipiert. Aufgenommene Dateien bleiben auf dem Gerät, sofern der Nutzer sie nicht manuell teilt, verschiebt oder hochlädt.",
+    "troubleshooting": "Fehlerbehebung",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "Wenn die APK nicht installiert wird, prüfen Sie, ob Installationen aus unbekannten Quellen erlaubt sind.",
+      "Wenn die Aufnahme nicht startet, prüfen Sie Kamera- und Mikrofonberechtigungen.",
+      "Wenn die Hintergrundaufnahme stoppt, deaktivieren Sie die Akkuoptimierung für die App.",
+      "Wenn Videos nicht sichtbar sind, prüfen Sie den Ordner GavetRecorder im Gerätespeicher.",
+      "Wenn Android eine Sicherheitswarnung anzeigt, stellen Sie sicher, dass die APK aus dem offiziellen Repository stammt."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "Installation mit ADB",
+    "version": "Aktuelle Version",
+    "version_text": "V16 enthält Unterstützung für eine mehrsprachige Oberfläche und korrigiert übersetzte Ressourcen auf dem Hauptbildschirm, einschließlich Qualität/FPS."
   },
   "it": {
     "file": "README.it.md",
     "label": "Italiano",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "Scaricare l’APK più recente",
+    "open_guide": "Aprire la guida di installazione",
+    "subtitle": "Registratore video in background per Android",
+    "description": "GavetRecorder è un’app Android progettata per registrare video in background tramite un servizio in primo piano. È pensata per utenti che hanno bisogno di registrazione locale continua, installazione manuale semplice e archiviazione organizzata sul dispositivo.",
+    "important": "Questo APK è distribuito fuori dal Google Play Store. Android potrebbe chiedere di consentire l’installazione da origini sconosciute prima dell’installazione.",
+    "languages": "Lingue",
+    "download": "Scaricare l’APK",
+    "download_text": "Scarica l’APK più recente direttamente dal pulsante in alto. Dopo il download, apri il file sul dispositivo Android per avviare l’installazione.",
+    "requirements": "Requisiti",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "Dispositivo Android compatibile con installazione manuale di APK.",
+      "Autorizzazione a installare app da origini sconosciute.",
+      "Autorizzazione fotocamera.",
+      "Autorizzazione microfono se la registrazione audio è attiva.",
+      "Autorizzazione notifiche per mantenere visibile il servizio di registrazione in primo piano.",
+      "Spazio libero sufficiente per i file video."
     ],
-    "install": "How to install",
+    "install": "Come installare",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "Scarica l’APK usando il pulsante in alto in questa pagina.",
+      "Apri l’APK scaricato sul dispositivo Android.",
+      "Se Android blocca l’installazione, tocca Impostazioni.",
+      "Consenti l’installazione da questa origine.",
+      "Torna all’installazione e tocca Installa.",
+      "Apri GavetRecorder.",
+      "Concedi le autorizzazioni richieste.",
+      "Avvia la registrazione dall’app."
     ],
-    "permissions": "Permissions used",
+    "permissions": "Autorizzazioni utilizzate",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "Fotocamera: necessaria per registrare video.",
+      "Microfono: necessario solo quando la registrazione audio è attiva.",
+      "Notifiche: necessarie per mantenere attivo il servizio di registrazione in primo piano.",
+      "Archiviazione o accesso ai media: usato per salvare e accedere ai video registrati.",
+      "Posizione: usata solo se sono attive funzioni GPS, percorso o telemetria."
     ],
-    "usage": "Basic usage",
+    "usage": "Uso di base",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "Apri l’app.",
+      "Scegli fotocamera, qualità e FPS desiderati.",
+      "Avvia la registrazione.",
+      "Mantieni attiva la notifica di registrazione.",
+      "Ferma la registrazione quando hai finito.",
+      "Trova i video registrati nell’archiviazione del dispositivo."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
+    "storage": "Dove vengono salvate le registrazioni",
+    "storage_text": "Le registrazioni vengono salvate localmente sul dispositivo, nella cartella prevista:",
     "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "privacy_text": "GavetRecorder è progettato per la registrazione locale. I file registrati restano sul dispositivo salvo condivisione, spostamento o caricamento manuale da parte dell’utente.",
+    "troubleshooting": "Risoluzione dei problemi",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "Se l’APK non si installa, verifica che l’installazione da origini sconosciute sia consentita.",
+      "Se la registrazione non parte, controlla le autorizzazioni di fotocamera e microfono.",
+      "Se la registrazione in background si interrompe, disattiva l’ottimizzazione batteria per l’app.",
+      "Se i video non sono visibili, controlla la cartella GavetRecorder nella memoria del dispositivo.",
+      "Se Android mostra un avviso di sicurezza, conferma che l’APK provenga dal repository ufficiale."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "Installare con ADB",
+    "version": "Versione attuale",
+    "version_text": "La V16 include il supporto all’interfaccia multilingue e corregge risorse tradotte usate nella schermata principale, inclusa Qualità/FPS."
   },
   "ja": {
     "file": "README.ja.md",
     "label": "日本語",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "最新 APK をダウンロード",
+    "open_guide": "インストールガイドを開く",
+    "subtitle": "Android 用バックグラウンド動画録画アプリ",
+    "description": "GavetRecorder は、フォアグラウンドサービスを使用してバックグラウンドで動画を録画するための Android アプリです。継続的なローカル録画、簡単な手動インストール、端末内で整理された保存を必要とするユーザー向けに作られています。",
+    "important": "この APK は Google Play ストア外で配布されています。インストール前に、Android が不明なアプリのインストール許可を求める場合があります。",
+    "languages": "言語",
+    "download": "APK をダウンロード",
+    "download_text": "ページ上部のボタンから最新の APK を直接ダウンロードしてください。ダウンロード後、Android 端末でファイルを開くとインストールを開始できます。",
+    "requirements": "要件",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "APK の手動インストールに対応した Android 端末。",
+      "不明なアプリのインストール許可。",
+      "カメラ権限。",
+      "音声録音を有効にする場合はマイク権限。",
+      "録画サービスをフォアグラウンドで表示するための通知権限。",
+      "動画ファイルを保存するための十分な空き容量。"
     ],
-    "install": "How to install",
+    "install": "インストール方法",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "このページ上部のボタンから APK をダウンロードします。",
+      "Android 端末でダウンロードした APK を開きます。",
+      "Android がインストールをブロックした場合は、設定をタップします。",
+      "この提供元からのインストールを許可します。",
+      "インストール画面に戻り、インストールをタップします。",
+      "GavetRecorder を開きます。",
+      "要求された権限を許可します。",
+      "アプリ内から録画を開始します。"
     ],
-    "permissions": "Permissions used",
+    "permissions": "使用する権限",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "カメラ：動画録画に必要です。",
+      "マイク：音声録音を有効にした場合のみ必要です。",
+      "通知：録画サービスをフォアグラウンドで維持するために必要です。",
+      "ストレージまたはメディアアクセス：録画動画の保存とアクセスに使用します。",
+      "位置情報：GPS、ルート、テレメトリ機能が有効な場合のみ使用します。"
     ],
-    "usage": "Basic usage",
+    "usage": "基本的な使い方",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "アプリを開きます。",
+      "使用するカメラ、品質、FPS を選択します。",
+      "録画を開始します。",
+      "録画通知を有効なままにします。",
+      "終了したら録画を停止します。",
+      "録画された動画は端末ストレージで確認できます。"
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "録画の保存場所",
+    "storage_text": "録画は端末内にローカル保存され、想定されるフォルダーは次のとおりです：",
+    "privacy": "プライバシー",
+    "privacy_text": "GavetRecorder はローカル録画向けに設計されています。録画ファイルは、ユーザーが手動で共有、移動、アップロードしない限り端末内に残ります。",
+    "troubleshooting": "トラブルシューティング",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "APK がインストールできない場合は、不明なアプリのインストールが許可されているか確認してください。",
+      "録画が開始しない場合は、カメラとマイクの権限を確認してください。",
+      "バックグラウンド録画が停止する場合は、このアプリのバッテリー最適化を無効にしてください。",
+      "動画が表示されない場合は、端末ストレージ内の GavetRecorder フォルダーを確認してください。",
+      "Android がセキュリティ警告を表示する場合は、APK が公式リポジトリから取得されたものか確認してください。"
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "ADB でインストール",
+    "version": "現在のバージョン",
+    "version_text": "V16 では多言語インターフェース対応を追加し、メイン画面で使用される翻訳リソースを修正しました。Quality/FPS も含まれます。"
   },
   "ko": {
     "file": "README.ko.md",
     "label": "한국어",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "최신 APK 다운로드",
+    "open_guide": "설치 가이드 열기",
+    "subtitle": "Android용 백그라운드 동영상 녹화 앱",
+    "description": "GavetRecorder는 포그라운드 서비스를 사용해 백그라운드에서 동영상을 녹화하도록 설계된 Android 앱입니다. 지속적인 로컬 녹화, 간단한 수동 설치, 기기 내 정리된 저장 공간이 필요한 사용자를 위한 앱입니다.",
+    "important": "이 APK는 Google Play Store 외부에서 배포됩니다. 설치 전에 Android가 알 수 없는 앱 설치 허용을 요청할 수 있습니다.",
+    "languages": "언어",
+    "download": "APK 다운로드",
+    "download_text": "이 페이지 상단의 버튼에서 최신 APK를 직접 다운로드하세요. 다운로드 후 Android 기기에서 파일을 열어 설치를 시작합니다.",
+    "requirements": "요구 사항",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "수동 APK 설치를 지원하는 Android 기기.",
+      "알 수 없는 출처의 앱 설치 권한.",
+      "카메라 권한.",
+      "오디오 녹화가 활성화된 경우 마이크 권한.",
+      "포그라운드 녹화 서비스를 표시하기 위한 알림 권한.",
+      "동영상 파일을 저장할 충분한 여유 공간."
     ],
-    "install": "How to install",
+    "install": "설치 방법",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "이 페이지 상단의 버튼으로 APK를 다운로드합니다.",
+      "Android 기기에서 다운로드한 APK를 엽니다.",
+      "Android가 설치를 차단하면 설정을 누릅니다.",
+      "이 출처에서 설치를 허용합니다.",
+      "설치 화면으로 돌아가 설치를 누릅니다.",
+      "GavetRecorder를 엽니다.",
+      "요청된 권한을 허용합니다.",
+      "앱 안에서 녹화를 시작합니다."
     ],
-    "permissions": "Permissions used",
+    "permissions": "사용되는 권한",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "카메라: 동영상 녹화에 필요합니다.",
+      "마이크: 오디오 녹화가 활성화된 경우에만 필요합니다.",
+      "알림: 녹화 서비스를 포그라운드에서 유지하는 데 필요합니다.",
+      "저장소 또는 미디어 접근: 녹화된 동영상을 저장하고 접근하는 데 사용됩니다.",
+      "위치: GPS, 경로 또는 텔레메트리 기능이 활성화된 경우에만 사용됩니다."
     ],
-    "usage": "Basic usage",
+    "usage": "기본 사용법",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "앱을 엽니다.",
+      "원하는 카메라, 품질, FPS를 선택합니다.",
+      "녹화를 시작합니다.",
+      "녹화 알림을 활성 상태로 유지합니다.",
+      "완료되면 녹화를 중지합니다.",
+      "기기 저장소에서 녹화된 동영상을 확인합니다."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "녹화 파일 저장 위치",
+    "storage_text": "녹화 파일은 기기에 로컬로 저장되며 예상 폴더는 다음과 같습니다:",
+    "privacy": "개인정보",
+    "privacy_text": "GavetRecorder는 로컬 녹화를 위해 설계되었습니다. 사용자가 직접 공유, 이동 또는 업로드하지 않는 한 녹화 파일은 기기에 남아 있습니다.",
+    "troubleshooting": "문제 해결",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "APK가 설치되지 않으면 알 수 없는 앱 설치가 허용되어 있는지 확인하세요.",
+      "녹화가 시작되지 않으면 카메라와 마이크 권한을 확인하세요.",
+      "백그라운드 녹화가 중지되면 앱의 배터리 최적화를 비활성화하세요.",
+      "동영상이 보이지 않으면 기기 저장소의 GavetRecorder 폴더를 확인하세요.",
+      "Android가 보안 경고를 표시하면 APK가 공식 저장소에서 온 것인지 확인하세요."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "ADB로 설치",
+    "version": "현재 버전",
+    "version_text": "V16은 다국어 인터페이스 지원을 포함하며, 메인 화면에서 사용되는 번역 리소스와 Quality/FPS 항목을 수정합니다."
   },
   "zh": {
     "file": "README.zh-CN.md",
     "label": "中文",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "下载最新 APK",
+    "open_guide": "打开安装指南",
+    "subtitle": "适用于 Android 的后台视频录制应用",
+    "description": "GavetRecorder 是一款 Android 应用，通过前台服务在后台录制视频。它适合需要连续本地录制、简单手动安装以及在设备上有序保存文件的用户。",
+    "important": "此 APK 在 Google Play 商店之外分发。安装前，Android 可能会要求允许安装未知来源的应用。",
+    "languages": "语言",
+    "download": "下载 APK",
+    "download_text": "请通过本页顶部的按钮直接下载最新 APK。下载完成后，在 Android 设备上打开该文件即可开始安装。",
+    "requirements": "要求",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "支持手动安装 APK 的 Android 设备。",
+      "允许安装未知来源应用。",
+      "相机权限。",
+      "如果启用音频录制，则需要麦克风权限。",
+      "通知权限，用于保持前台录制服务可见。",
+      "足够的可用存储空间用于保存视频文件。"
     ],
-    "install": "How to install",
+    "install": "安装方法",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "使用本页顶部的按钮下载 APK。",
+      "在 Android 设备上打开下载的 APK。",
+      "如果 Android 阻止安装，请点击设置。",
+      "允许从此来源安装应用。",
+      "返回安装界面并点击安装。",
+      "打开 GavetRecorder。",
+      "授予请求的权限。",
+      "在应用内开始录制。"
     ],
-    "permissions": "Permissions used",
+    "permissions": "使用的权限",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "相机：用于录制视频。",
+      "麦克风：仅在启用音频录制时需要。",
+      "通知：用于让录制服务保持在前台运行。",
+      "存储或媒体访问：用于保存和访问录制的视频。",
+      "位置：仅在启用 GPS、路线或遥测功能时使用。"
     ],
-    "usage": "Basic usage",
+    "usage": "基本使用",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "打开应用。",
+      "选择所需的相机、质量和 FPS。",
+      "开始录制。",
+      "保持录制通知处于活动状态。",
+      "完成后停止录制。",
+      "在设备存储中查找录制的视频。"
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "录制文件保存位置",
+    "storage_text": "录制文件会保存在设备本地，预期文件夹为：",
+    "privacy": "隐私",
+    "privacy_text": "GavetRecorder 专为本地录制设计。除非用户手动分享、移动或上传，录制文件会保留在设备上。",
+    "troubleshooting": "故障排除",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "如果 APK 无法安装，请检查是否允许安装未知来源应用。",
+      "如果无法开始录制，请检查相机和麦克风权限。",
+      "如果后台录制停止，请关闭此应用的电池优化。",
+      "如果找不到视频，请检查设备存储中的 GavetRecorder 文件夹。",
+      "如果 Android 显示安全警告，请确认 APK 来自官方仓库。"
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "使用 ADB 安装",
+    "version": "当前版本",
+    "version_text": "V16 增加了多语言界面支持，并修复了主屏幕使用的翻译资源，包括质量/FPS。"
   },
   "ru": {
     "file": "README.ru.md",
     "label": "Русский",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "Скачать последнюю APK",
+    "open_guide": "Открыть руководство по установке",
+    "subtitle": "Фоновая запись видео для Android",
+    "description": "GavetRecorder — это Android-приложение для записи видео в фоновом режиме с использованием foreground service. Оно предназначено для пользователей, которым нужна непрерывная локальная запись, простая ручная установка и организованное хранение файлов на устройстве.",
+    "important": "Этот APK распространяется вне Google Play Store. Перед установкой Android может попросить разрешить установку приложений из неизвестных источников.",
+    "languages": "Языки",
+    "download": "Скачать APK",
+    "download_text": "Скачайте последнюю APK напрямую с помощью кнопки в верхней части страницы. После загрузки откройте файл на Android-устройстве, чтобы начать установку.",
+    "requirements": "Требования",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "Android-устройство с поддержкой ручной установки APK.",
+      "Разрешение на установку приложений из неизвестных источников.",
+      "Разрешение камеры.",
+      "Разрешение микрофона, если включена запись звука.",
+      "Разрешение уведомлений, чтобы foreground service записи оставался видимым.",
+      "Достаточно свободного места для видеофайлов."
     ],
-    "install": "How to install",
+    "install": "Как установить",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "Скачайте APK с помощью кнопки вверху страницы.",
+      "Откройте скачанный APK на Android-устройстве.",
+      "Если Android блокирует установку, нажмите Настройки.",
+      "Разрешите установку из этого источника.",
+      "Вернитесь к установщику и нажмите Установить.",
+      "Откройте GavetRecorder.",
+      "Предоставьте запрошенные разрешения.",
+      "Начните запись внутри приложения."
     ],
-    "permissions": "Permissions used",
+    "permissions": "Используемые разрешения",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "Камера: необходима для записи видео.",
+      "Микрофон: нужен только при включенной записи звука.",
+      "Уведомления: нужны для поддержания службы записи активной в foreground.",
+      "Хранилище или доступ к медиа: используется для сохранения и открытия записанных видео.",
+      "Местоположение: используется только при включенных функциях GPS, маршрута или телеметрии."
     ],
-    "usage": "Basic usage",
+    "usage": "Основное использование",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "Откройте приложение.",
+      "Выберите камеру, качество и FPS.",
+      "Начните запись.",
+      "Оставьте уведомление записи активным.",
+      "Остановите запись после завершения.",
+      "Найдите записанные видео в памяти устройства."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "Где сохраняются записи",
+    "storage_text": "Записи сохраняются локально на устройстве в ожидаемой папке:",
+    "privacy": "Конфиденциальность",
+    "privacy_text": "GavetRecorder предназначен для локальной записи. Записанные файлы остаются на устройстве, если пользователь вручную не поделится ими, не переместит или не загрузит их.",
+    "troubleshooting": "Устранение неполадок",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "Если APK не устанавливается, проверьте, разрешена ли установка из неизвестных источников.",
+      "Если запись не начинается, проверьте разрешения камеры и микрофона.",
+      "Если фоновая запись останавливается, отключите оптимизацию батареи для приложения.",
+      "Если видео не видны, проверьте папку GavetRecorder в памяти устройства.",
+      "Если Android показывает предупреждение безопасности, убедитесь, что APK получен из официального репозитория."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "Установка через ADB",
+    "version": "Текущая версия",
+    "version_text": "V16 добавляет поддержку многоязычного интерфейса и исправляет переведенные ресурсы на главном экране, включая Качество/FPS."
   },
   "ar": {
     "file": "README.ar.md",
     "label": "العربية",
-    "title": "GavetRecorder APK",
-    "subtitle": "Background video recorder for Android",
-    "description": "GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.",
-    "notice": "This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.",
-    "download": "Download the APK",
-    "download_text": "Download the latest APK file from the repository release or from the APK file provided in the project.",
-    "requirements": "Requirements",
+    "download_direct": "تنزيل أحدث APK",
+    "open_guide": "فتح دليل التثبيت",
+    "subtitle": "مسجل فيديو في الخلفية لنظام Android",
+    "description": "GavetRecorder هو تطبيق Android مصمم لتسجيل الفيديو في الخلفية باستخدام خدمة في المقدمة. وهو مناسب للمستخدمين الذين يحتاجون إلى تسجيل محلي مستمر، وتثبيت يدوي بسيط، وتخزين منظم على الجهاز.",
+    "important": "يتم توزيع ملف APK هذا خارج Google Play Store. قبل التثبيت، قد يطلب Android السماح بتثبيت التطبيقات من مصادر غير معروفة.",
+    "languages": "اللغات",
+    "download": "تنزيل APK",
+    "download_text": "قم بتنزيل أحدث ملف APK مباشرة من الزر الموجود أعلى هذه الصفحة. بعد التنزيل، افتح الملف على جهاز Android لبدء التثبيت.",
+    "requirements": "المتطلبات",
     "requirements_list": [
-      "Android device compatible with manual APK installation.",
-      "Permission to install apps from unknown sources.",
-      "Camera permission.",
-      "Microphone permission, if audio recording is enabled.",
-      "Location permission, if GPS or route data is used.",
-      "Enough free storage space for video files."
+      "جهاز Android يدعم التثبيت اليدوي لملفات APK.",
+      "السماح بتثبيت التطبيقات من مصادر غير معروفة.",
+      "إذن الكاميرا.",
+      "إذن الميكروفون إذا كان تسجيل الصوت مفعلاً.",
+      "إذن الإشعارات لإبقاء خدمة التسجيل في المقدمة ظاهرة.",
+      "مساحة تخزين كافية لملفات الفيديو."
     ],
-    "install": "How to install",
+    "install": "طريقة التثبيت",
     "install_steps": [
-      "Download the APK file to your Android device.",
-      "Open the APK file using the file manager or browser download notification.",
-      "If Android blocks the installation, tap Settings and allow installation from this source.",
-      "Return to the installer and tap Install.",
-      "Open GavetRecorder after installation.",
-      "Grant the requested permissions when Android asks.",
-      "Start recording from inside the app."
+      "قم بتنزيل ملف APK باستخدام الزر أعلى هذه الصفحة.",
+      "افتح ملف APK الذي تم تنزيله على جهاز Android.",
+      "إذا منع Android التثبيت، اضغط على الإعدادات.",
+      "اسمح بالتثبيت من هذا المصدر.",
+      "ارجع إلى شاشة التثبيت واضغط على تثبيت.",
+      "افتح GavetRecorder.",
+      "امنح الأذونات المطلوبة.",
+      "ابدأ التسجيل من داخل التطبيق."
     ],
-    "permissions": "Permissions used",
+    "permissions": "الأذونات المستخدمة",
     "permissions_list": [
-      "Camera: required to record video.",
-      "Microphone: required only when audio recording is enabled.",
-      "Location: used only for GPS, route or telemetry features when available.",
-      "Notifications: required to keep the foreground recording service visible.",
-      "Storage or media access: used to save and access recorded files."
+      "الكاميرا: مطلوبة لتسجيل الفيديو.",
+      "الميكروفون: مطلوب فقط عند تفعيل تسجيل الصوت.",
+      "الإشعارات: مطلوبة لإبقاء خدمة التسجيل نشطة في المقدمة.",
+      "التخزين أو الوصول إلى الوسائط: يستخدم لحفظ مقاطع الفيديو المسجلة والوصول إليها.",
+      "الموقع: يستخدم فقط إذا كانت ميزات GPS أو المسار أو القياسات مفعلة."
     ],
-    "usage": "Basic usage",
+    "usage": "الاستخدام الأساسي",
     "usage_list": [
-      "Open the app.",
-      "Choose the desired camera, quality and FPS options.",
-      "Start the recording.",
-      "Keep the foreground notification active while recording.",
-      "Stop the recording when finished.",
-      "Access the recorded videos in the device storage."
+      "افتح التطبيق.",
+      "اختر الكاميرا والجودة و FPS المطلوبة.",
+      "ابدأ التسجيل.",
+      "اترك إشعار التسجيل نشطاً.",
+      "أوقف التسجيل عند الانتهاء.",
+      "اعثر على مقاطع الفيديو المسجلة في تخزين الجهاز."
     ],
-    "storage": "Where recordings are saved",
-    "storage_text": "Recordings are saved locally on the device. The expected folder is:",
-    "privacy": "Privacy",
-    "privacy_text": "GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.",
-    "troubleshooting": "Troubleshooting",
+    "storage": "مكان حفظ التسجيلات",
+    "storage_text": "يتم حفظ التسجيلات محلياً على الجهاز في المجلد المتوقع:",
+    "privacy": "الخصوصية",
+    "privacy_text": "تم تصميم GavetRecorder للتسجيل المحلي. تبقى الملفات المسجلة على الجهاز ما لم يقم المستخدم بمشاركتها أو نقلها أو رفعها يدوياً.",
+    "troubleshooting": "استكشاف الأخطاء وإصلاحها",
     "troubleshooting_list": [
-      "If the APK does not install, check whether installation from unknown apps is allowed.",
-      "If recording does not start, verify camera and microphone permissions.",
-      "If background recording stops, disable battery optimization for the app.",
-      "If videos are not visible, check the app folder in the device storage.",
-      "If Android shows a security warning, confirm that the APK came from the official project repository."
+      "إذا لم يتم تثبيت APK، تحقق من السماح بالتثبيت من مصادر غير معروفة.",
+      "إذا لم يبدأ التسجيل، تحقق من أذونات الكاميرا والميكروفون.",
+      "إذا توقف التسجيل في الخلفية، قم بتعطيل تحسين البطارية للتطبيق.",
+      "إذا لم تظهر مقاطع الفيديو، تحقق من مجلد GavetRecorder في تخزين الجهاز.",
+      "إذا عرض Android تحذيراً أمنياً، تأكد من أن APK من المستودع الرسمي."
     ],
-    "adb": "Install using ADB",
-    "version": "Current version",
-    "version_text": "V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS."
+    "adb": "التثبيت باستخدام ADB",
+    "version": "الإصدار الحالي",
+    "version_text": "يتضمن V16 دعماً للواجهة متعددة اللغات ويصحح الموارد المترجمة المستخدمة في الشاشة الرئيسية، بما في ذلك الجودة/FPS."
   }
 };
 
@@ -820,14 +825,10 @@
     };
 
     function detectLanguage() {
-      const browserLanguages = navigator.languages && navigator.languages.length
-        ? navigator.languages
-        : [navigator.language || "en"];
-
+      const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
       for (const raw of browserLanguages) {
         const lang = String(raw).toLowerCase();
         if (aliases[lang]) return aliases[lang];
-
         const base = lang.split("-")[0];
         if (aliases[base]) return aliases[base];
       }
@@ -839,7 +840,7 @@
     }
 
     function steps(items) {
-      return items.map((item, index) => `<li><strong>${index + 1}.</strong> ${item}</li>`).join("");
+      return items.map(item => `<li>${item}</li>`).join("");
     }
 
     function render(lang) {
@@ -855,73 +856,71 @@
 
       document.getElementById("app").innerHTML = `
         <section class="hero">
-          <h1>${data.title}</h1>
+          <h1>GavetRecorder APK</h1>
           <p class="subtitle">${data.subtitle}</p>
           <p class="muted">${data.description}</p>
-          <div class="notice"><strong>APK:</strong> ${data.notice}</div>
+          <div class="notice"><strong>${lang === "pt" ? "Importante" : "Important"}:</strong> ${data.important}</div>
           <div class="actions">
-            <a class="linkbtn" href="../dist/GavetRecorder-v16-debug.apk">Download APK</a>
-            <a class="linkbtn" href="../README.md">Repository README</a>
+            <a class="linkbtn" href="https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk">⬇️ ${data.download_direct}</a>
+            <a class="linkbtn" href="https://mateusgavet.github.io/GavetRecorder-APK/">🌐 ${data.open_guide}</a>
           </div>
         </section>
 
-        <section class="card wide" style="margin-top:18px">
-          <h2>Language</h2>
+        <section class="card">
+          <h2>${data.languages}</h2>
           ${buttons}
         </section>
 
-        <section class="grid">
-          <div class="card">
-            <h2>${data.download}</h2>
-            <p>${data.download_text}</p>
-          </div>
+        <section class="card">
+          <h2>${data.download}</h2>
+          <p>${data.download_text}</p>
+        </section>
 
-          <div class="card">
-            <h2>${data.requirements}</h2>
-            <ul>${list(data.requirements_list)}</ul>
-          </div>
+        <section class="card">
+          <h2>${data.requirements}</h2>
+          <ul>${list(data.requirements_list)}</ul>
+        </section>
 
-          <div class="card wide">
-            <h2>${data.install}</h2>
-            <ol>${steps(data.install_steps)}</ol>
-          </div>
+        <section class="card">
+          <h2>${data.install}</h2>
+          <ol>${steps(data.install_steps)}</ol>
+        </section>
 
-          <div class="card">
-            <h2>${data.permissions}</h2>
-            <ul>${list(data.permissions_list)}</ul>
-          </div>
+        <section class="card">
+          <h2>${data.permissions}</h2>
+          <ul>${list(data.permissions_list)}</ul>
+        </section>
 
-          <div class="card">
-            <h2>${data.usage}</h2>
-            <ul>${list(data.usage_list)}</ul>
-          </div>
+        <section class="card">
+          <h2>${data.usage}</h2>
+          <ul>${list(data.usage_list)}</ul>
+        </section>
 
-          <div class="card">
-            <h2>${data.storage}</h2>
-            <p>${data.storage_text}</p>
-            <pre><code>DCIM/GavetRecorder/
+        <section class="card">
+          <h2>${data.storage}</h2>
+          <p>${data.storage_text}</p>
+          <pre><code>DCIM/GavetRecorder/
 └── Videos/</code></pre>
-          </div>
+        </section>
 
-          <div class="card">
-            <h2>${data.privacy}</h2>
-            <p>${data.privacy_text}</p>
-          </div>
+        <section class="card">
+          <h2>${data.privacy}</h2>
+          <p>${data.privacy_text}</p>
+        </section>
 
-          <div class="card wide">
-            <h2>${data.troubleshooting}</h2>
-            <ul>${list(data.troubleshooting_list)}</ul>
-          </div>
+        <section class="card">
+          <h2>${data.troubleshooting}</h2>
+          <ul>${list(data.troubleshooting_list)}</ul>
+        </section>
 
-          <div class="card wide">
-            <h2>${data.adb}</h2>
-            <pre><code>adb install -r app/build/outputs/apk/debug/app-debug.apk</code></pre>
-          </div>
+        <section class="card">
+          <h2>${data.adb}</h2>
+          <pre><code>adb install -r app/build/outputs/apk/debug/app-debug.apk</code></pre>
+        </section>
 
-          <div class="card wide">
-            <h2>${data.version}</h2>
-            <p>${data.version_text}</p>
-          </div>
+        <section class="card">
+          <h2>${data.version}</h2>
+          <p>${data.version_text}</p>
         </section>
       `;
     }

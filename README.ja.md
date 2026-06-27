@@ -2,7 +2,7 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_START -->
 
-## Download direto
+## APK をダウンロード
 
 [**⬇️ 最新 APK をダウンロード**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
 
@@ -10,14 +10,13 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
+## Android 用バックグラウンド動画録画アプリ
 
-## Background video recorder for Android
+GavetRecorder は、フォアグラウンドサービスを使用してバックグラウンドで動画を録画するための Android アプリです。継続的なローカル録画、簡単な手動インストール、端末内で整理された保存を必要とするユーザー向けに作られています。
 
-GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.
+> **Important:** この APK は Google Play ストア外で配布されています。インストール前に、Android が不明なアプリのインストール許可を求める場合があります。
 
-> **Important:** This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.
-
-## Languages
+## 言語
 
 - [English](README.md)
 - [Português](README.pt-BR.md)
@@ -31,77 +30,74 @@ GavetRecorder is an Android application designed to record video in the backgrou
 - [Русский](README.ru.md)
 - [العربية](README.ar.md)
 
-## Download the APK
+## APK をダウンロード
 
-Download the latest APK file from the repository release or from the APK file provided in the project.
+ページ上部のボタンから最新の APK を直接ダウンロードしてください。ダウンロード後、Android 端末でファイルを開くとインストールを開始できます。
 
-## Requirements
+## 要件
 
-- Android device compatible with manual APK installation.
-- Permission to install apps from unknown sources.
-- Camera permission.
-- Microphone permission, if audio recording is enabled.
-- Location permission, if GPS or route data is used.
-- Enough free storage space for video files.
+- APK の手動インストールに対応した Android 端末。
+- 不明なアプリのインストール許可。
+- カメラ権限。
+- 音声録音を有効にする場合はマイク権限。
+- 録画サービスをフォアグラウンドで表示するための通知権限。
+- 動画ファイルを保存するための十分な空き容量。
 
-## How to install
+## インストール方法
 
-1. Download the APK file to your Android device.
-2. Open the APK file using the file manager or browser download notification.
-3. If Android blocks the installation, tap Settings and allow installation from this source.
-4. Return to the installer and tap Install.
-5. Open GavetRecorder after installation.
-6. Grant the requested permissions when Android asks.
-7. Start recording from inside the app.
+1. このページ上部のボタンから APK をダウンロードします。
+2. Android 端末でダウンロードした APK を開きます。
+3. Android がインストールをブロックした場合は、設定をタップします。
+4. この提供元からのインストールを許可します。
+5. インストール画面に戻り、インストールをタップします。
+6. GavetRecorder を開きます。
+7. 要求された権限を許可します。
+8. アプリ内から録画を開始します。
 
-## Permissions used
+## 使用する権限
 
-- Camera: required to record video.
-- Microphone: required only when audio recording is enabled.
-- Location: used only for GPS, route or telemetry features when available.
-- Notifications: required to keep the foreground recording service visible.
-- Storage or media access: used to save and access recorded files.
+- カメラ：動画録画に必要です。
+- マイク：音声録音を有効にした場合のみ必要です。
+- 通知：録画サービスをフォアグラウンドで維持するために必要です。
+- ストレージまたはメディアアクセス：録画動画の保存とアクセスに使用します。
+- 位置情報：GPS、ルート、テレメトリ機能が有効な場合のみ使用します。
 
-## Basic usage
+## 基本的な使い方
 
-- Open the app.
-- Choose the desired camera, quality and FPS options.
-- Start the recording.
-- Keep the foreground notification active while recording.
-- Stop the recording when finished.
-- Access the recorded videos in the device storage.
+- アプリを開きます。
+- 使用するカメラ、品質、FPS を選択します。
+- 録画を開始します。
+- 録画通知を有効なままにします。
+- 終了したら録画を停止します。
+- 録画された動画は端末ストレージで確認できます。
 
-## Where recordings are saved
+## 録画の保存場所
 
-Recordings are saved locally on the device. The expected folder is:
+録画は端末内にローカル保存され、想定されるフォルダーは次のとおりです：
 
 ```text
 DCIM/GavetRecorder/
 └── Videos/
 ```
 
-## Privacy
+## プライバシー
 
-GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.
+GavetRecorder はローカル録画向けに設計されています。録画ファイルは、ユーザーが手動で共有、移動、アップロードしない限り端末内に残ります。
 
-## Troubleshooting
+## トラブルシューティング
 
-- If the APK does not install, check whether installation from unknown apps is allowed.
-- If recording does not start, verify camera and microphone permissions.
-- If background recording stops, disable battery optimization for the app.
-- If videos are not visible, check the app folder in the device storage.
-- If Android shows a security warning, confirm that the APK came from the official project repository.
+- APK がインストールできない場合は、不明なアプリのインストールが許可されているか確認してください。
+- 録画が開始しない場合は、カメラとマイクの権限を確認してください。
+- バックグラウンド録画が停止する場合は、このアプリのバッテリー最適化を無効にしてください。
+- 動画が表示されない場合は、端末ストレージ内の GavetRecorder フォルダーを確認してください。
+- Android がセキュリティ警告を表示する場合は、APK が公式リポジトリから取得されたものか確認してください。
 
-## Install using ADB
+## ADB でインストール
 
 ```bash
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## Current version
+## 現在のバージョン
 
-V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS.
-
-## GitHub Pages
-
-The web documentation can automatically detect the browser language through `docs/index.html`.
+V16 では多言語インターフェース対応を追加し、メイン画面で使用される翻訳リソースを修正しました。Quality/FPS も含まれます。

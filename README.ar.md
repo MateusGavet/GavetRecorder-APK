@@ -2,7 +2,7 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_START -->
 
-## Download direto
+## تنزيل APK
 
 [**⬇️ تنزيل أحدث APK**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
 
@@ -10,14 +10,13 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
+## مسجل فيديو في الخلفية لنظام Android
 
-## Background video recorder for Android
+GavetRecorder هو تطبيق Android مصمم لتسجيل الفيديو في الخلفية باستخدام خدمة في المقدمة. وهو مناسب للمستخدمين الذين يحتاجون إلى تسجيل محلي مستمر، وتثبيت يدوي بسيط، وتخزين منظم على الجهاز.
 
-GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.
+> **Important:** يتم توزيع ملف APK هذا خارج Google Play Store. قبل التثبيت، قد يطلب Android السماح بتثبيت التطبيقات من مصادر غير معروفة.
 
-> **Important:** This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.
-
-## Languages
+## اللغات
 
 - [English](README.md)
 - [Português](README.pt-BR.md)
@@ -31,77 +30,74 @@ GavetRecorder is an Android application designed to record video in the backgrou
 - [Русский](README.ru.md)
 - [العربية](README.ar.md)
 
-## Download the APK
+## تنزيل APK
 
-Download the latest APK file from the repository release or from the APK file provided in the project.
+قم بتنزيل أحدث ملف APK مباشرة من الزر الموجود أعلى هذه الصفحة. بعد التنزيل، افتح الملف على جهاز Android لبدء التثبيت.
 
-## Requirements
+## المتطلبات
 
-- Android device compatible with manual APK installation.
-- Permission to install apps from unknown sources.
-- Camera permission.
-- Microphone permission, if audio recording is enabled.
-- Location permission, if GPS or route data is used.
-- Enough free storage space for video files.
+- جهاز Android يدعم التثبيت اليدوي لملفات APK.
+- السماح بتثبيت التطبيقات من مصادر غير معروفة.
+- إذن الكاميرا.
+- إذن الميكروفون إذا كان تسجيل الصوت مفعلاً.
+- إذن الإشعارات لإبقاء خدمة التسجيل في المقدمة ظاهرة.
+- مساحة تخزين كافية لملفات الفيديو.
 
-## How to install
+## طريقة التثبيت
 
-1. Download the APK file to your Android device.
-2. Open the APK file using the file manager or browser download notification.
-3. If Android blocks the installation, tap Settings and allow installation from this source.
-4. Return to the installer and tap Install.
-5. Open GavetRecorder after installation.
-6. Grant the requested permissions when Android asks.
-7. Start recording from inside the app.
+1. قم بتنزيل ملف APK باستخدام الزر أعلى هذه الصفحة.
+2. افتح ملف APK الذي تم تنزيله على جهاز Android.
+3. إذا منع Android التثبيت، اضغط على الإعدادات.
+4. اسمح بالتثبيت من هذا المصدر.
+5. ارجع إلى شاشة التثبيت واضغط على تثبيت.
+6. افتح GavetRecorder.
+7. امنح الأذونات المطلوبة.
+8. ابدأ التسجيل من داخل التطبيق.
 
-## Permissions used
+## الأذونات المستخدمة
 
-- Camera: required to record video.
-- Microphone: required only when audio recording is enabled.
-- Location: used only for GPS, route or telemetry features when available.
-- Notifications: required to keep the foreground recording service visible.
-- Storage or media access: used to save and access recorded files.
+- الكاميرا: مطلوبة لتسجيل الفيديو.
+- الميكروفون: مطلوب فقط عند تفعيل تسجيل الصوت.
+- الإشعارات: مطلوبة لإبقاء خدمة التسجيل نشطة في المقدمة.
+- التخزين أو الوصول إلى الوسائط: يستخدم لحفظ مقاطع الفيديو المسجلة والوصول إليها.
+- الموقع: يستخدم فقط إذا كانت ميزات GPS أو المسار أو القياسات مفعلة.
 
-## Basic usage
+## الاستخدام الأساسي
 
-- Open the app.
-- Choose the desired camera, quality and FPS options.
-- Start the recording.
-- Keep the foreground notification active while recording.
-- Stop the recording when finished.
-- Access the recorded videos in the device storage.
+- افتح التطبيق.
+- اختر الكاميرا والجودة و FPS المطلوبة.
+- ابدأ التسجيل.
+- اترك إشعار التسجيل نشطاً.
+- أوقف التسجيل عند الانتهاء.
+- اعثر على مقاطع الفيديو المسجلة في تخزين الجهاز.
 
-## Where recordings are saved
+## مكان حفظ التسجيلات
 
-Recordings are saved locally on the device. The expected folder is:
+يتم حفظ التسجيلات محلياً على الجهاز في المجلد المتوقع:
 
 ```text
 DCIM/GavetRecorder/
 └── Videos/
 ```
 
-## Privacy
+## الخصوصية
 
-GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.
+تم تصميم GavetRecorder للتسجيل المحلي. تبقى الملفات المسجلة على الجهاز ما لم يقم المستخدم بمشاركتها أو نقلها أو رفعها يدوياً.
 
-## Troubleshooting
+## استكشاف الأخطاء وإصلاحها
 
-- If the APK does not install, check whether installation from unknown apps is allowed.
-- If recording does not start, verify camera and microphone permissions.
-- If background recording stops, disable battery optimization for the app.
-- If videos are not visible, check the app folder in the device storage.
-- If Android shows a security warning, confirm that the APK came from the official project repository.
+- إذا لم يتم تثبيت APK، تحقق من السماح بالتثبيت من مصادر غير معروفة.
+- إذا لم يبدأ التسجيل، تحقق من أذونات الكاميرا والميكروفون.
+- إذا توقف التسجيل في الخلفية، قم بتعطيل تحسين البطارية للتطبيق.
+- إذا لم تظهر مقاطع الفيديو، تحقق من مجلد GavetRecorder في تخزين الجهاز.
+- إذا عرض Android تحذيراً أمنياً، تأكد من أن APK من المستودع الرسمي.
 
-## Install using ADB
+## التثبيت باستخدام ADB
 
 ```bash
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## Current version
+## الإصدار الحالي
 
-V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS.
-
-## GitHub Pages
-
-The web documentation can automatically detect the browser language through `docs/index.html`.
+يتضمن V16 دعماً للواجهة متعددة اللغات ويصحح الموارد المترجمة المستخدمة في الشاشة الرئيسية، بما في ذلك الجودة/FPS.

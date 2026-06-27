@@ -2,7 +2,7 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_START -->
 
-## Download direto
+## Скачать APK
 
 [**⬇️ Скачать последнюю APK**](https://github.com/MateusGavet/GavetRecorder-APK/raw/main/dist/GavetRecorder-v16-debug.apk)
 
@@ -10,14 +10,13 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
+## Фоновая запись видео для Android
 
-## Background video recorder for Android
+GavetRecorder — это Android-приложение для записи видео в фоновом режиме с использованием foreground service. Оно предназначено для пользователей, которым нужна непрерывная локальная запись, простая ручная установка и организованное хранение файлов на устройстве.
 
-GavetRecorder is an Android application designed to record video in the background using a foreground service. It is intended for users who need continuous, local video recording with a simple installation process and organized file storage.
+> **Important:** Этот APK распространяется вне Google Play Store. Перед установкой Android может попросить разрешить установку приложений из неизвестных источников.
 
-> **Important:** This APK is distributed outside the Google Play Store. To install it, Android may ask you to allow installation from unknown apps.
-
-## Languages
+## Языки
 
 - [English](README.md)
 - [Português](README.pt-BR.md)
@@ -31,77 +30,74 @@ GavetRecorder is an Android application designed to record video in the backgrou
 - [Русский](README.ru.md)
 - [العربية](README.ar.md)
 
-## Download the APK
+## Скачать APK
 
-Download the latest APK file from the repository release or from the APK file provided in the project.
+Скачайте последнюю APK напрямую с помощью кнопки в верхней части страницы. После загрузки откройте файл на Android-устройстве, чтобы начать установку.
 
-## Requirements
+## Требования
 
-- Android device compatible with manual APK installation.
-- Permission to install apps from unknown sources.
-- Camera permission.
-- Microphone permission, if audio recording is enabled.
-- Location permission, if GPS or route data is used.
-- Enough free storage space for video files.
+- Android-устройство с поддержкой ручной установки APK.
+- Разрешение на установку приложений из неизвестных источников.
+- Разрешение камеры.
+- Разрешение микрофона, если включена запись звука.
+- Разрешение уведомлений, чтобы foreground service записи оставался видимым.
+- Достаточно свободного места для видеофайлов.
 
-## How to install
+## Как установить
 
-1. Download the APK file to your Android device.
-2. Open the APK file using the file manager or browser download notification.
-3. If Android blocks the installation, tap Settings and allow installation from this source.
-4. Return to the installer and tap Install.
-5. Open GavetRecorder after installation.
-6. Grant the requested permissions when Android asks.
-7. Start recording from inside the app.
+1. Скачайте APK с помощью кнопки вверху страницы.
+2. Откройте скачанный APK на Android-устройстве.
+3. Если Android блокирует установку, нажмите Настройки.
+4. Разрешите установку из этого источника.
+5. Вернитесь к установщику и нажмите Установить.
+6. Откройте GavetRecorder.
+7. Предоставьте запрошенные разрешения.
+8. Начните запись внутри приложения.
 
-## Permissions used
+## Используемые разрешения
 
-- Camera: required to record video.
-- Microphone: required only when audio recording is enabled.
-- Location: used only for GPS, route or telemetry features when available.
-- Notifications: required to keep the foreground recording service visible.
-- Storage or media access: used to save and access recorded files.
+- Камера: необходима для записи видео.
+- Микрофон: нужен только при включенной записи звука.
+- Уведомления: нужны для поддержания службы записи активной в foreground.
+- Хранилище или доступ к медиа: используется для сохранения и открытия записанных видео.
+- Местоположение: используется только при включенных функциях GPS, маршрута или телеметрии.
 
-## Basic usage
+## Основное использование
 
-- Open the app.
-- Choose the desired camera, quality and FPS options.
-- Start the recording.
-- Keep the foreground notification active while recording.
-- Stop the recording when finished.
-- Access the recorded videos in the device storage.
+- Откройте приложение.
+- Выберите камеру, качество и FPS.
+- Начните запись.
+- Оставьте уведомление записи активным.
+- Остановите запись после завершения.
+- Найдите записанные видео в памяти устройства.
 
-## Where recordings are saved
+## Где сохраняются записи
 
-Recordings are saved locally on the device. The expected folder is:
+Записи сохраняются локально на устройстве в ожидаемой папке:
 
 ```text
 DCIM/GavetRecorder/
 └── Videos/
 ```
 
-## Privacy
+## Конфиденциальность
 
-GavetRecorder is designed for local recording. Recorded files remain on the device unless the user manually shares, moves or uploads them.
+GavetRecorder предназначен для локальной записи. Записанные файлы остаются на устройстве, если пользователь вручную не поделится ими, не переместит или не загрузит их.
 
-## Troubleshooting
+## Устранение неполадок
 
-- If the APK does not install, check whether installation from unknown apps is allowed.
-- If recording does not start, verify camera and microphone permissions.
-- If background recording stops, disable battery optimization for the app.
-- If videos are not visible, check the app folder in the device storage.
-- If Android shows a security warning, confirm that the APK came from the official project repository.
+- Если APK не устанавливается, проверьте, разрешена ли установка из неизвестных источников.
+- Если запись не начинается, проверьте разрешения камеры и микрофона.
+- Если фоновая запись останавливается, отключите оптимизацию батареи для приложения.
+- Если видео не видны, проверьте папку GavetRecorder в памяти устройства.
+- Если Android показывает предупреждение безопасности, убедитесь, что APK получен из официального репозитория.
 
-## Install using ADB
+## Установка через ADB
 
 ```bash
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## Current version
+## Текущая версия
 
-V16 includes multilingual interface support and fixes translated resources used in the main screen, including Quality/FPS.
-
-## GitHub Pages
-
-The web documentation can automatically detect the browser language through `docs/index.html`.
+V16 добавляет поддержку многоязычного интерфейса и исправляет переведенные ресурсы на главном экране, включая Качество/FPS.
