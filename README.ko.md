@@ -4,7 +4,7 @@
 
 ## APK 다운로드
 
-[**⬇️ APK 다운로드 페이지 열기**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
+[**⬇️ APK 다운로드 페이지 열기**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.1.0-beta)
 
 [**🌐 설치 가이드 열기**](https://mateusgavet.github.io/GavetRecorder-APK/)
 

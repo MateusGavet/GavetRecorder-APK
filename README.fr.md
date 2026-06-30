@@ -4,7 +4,7 @@
 
 ## Télécharger l’APK
 
-[**⬇️ Ouvrir la page de téléchargement de l’APK**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
+[**⬇️ Ouvrir la page de téléchargement de l’APK**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.1.0-beta)
 
 [**🌐 Ouvrir le guide d’installation**](https://mateusgavet.github.io/GavetRecorder-APK/)
 

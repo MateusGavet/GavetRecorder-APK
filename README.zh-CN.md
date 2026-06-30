@@ -4,7 +4,7 @@
 
 ## 下载 APK
 
-[**⬇️ 打开 APK 下载页面**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
+[**⬇️ 打开 APK 下载页面**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.1.0-beta)
 
 [**🌐 打开安装指南**](https://mateusgavet.github.io/GavetRecorder-APK/)
 

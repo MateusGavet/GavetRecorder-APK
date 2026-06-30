@@ -4,7 +4,7 @@
 
 ## Download direto
 
-[**⬇️ Abrir página de download do APK**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.0.0)
+[**⬇️ Abrir página de download do APK**](https://github.com/MateusGavet/GavetRecorder-APK/releases/tag/v1.1.0-beta)
 
 [**🌐 Abrir guia de instalação**](https://mateusgavet.github.io/GavetRecorder-APK/)
 
@@ -100,4 +100,4 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Versão atual
 
-A V16 inclui suporte à interface multilíngue e corrige recursos traduzidos usados na tela principal, incluindo Qualidade/FPS.
+A v1.1.0-beta inclui telemetria OBD2, editor de overlay configurável, envio para Google Drive, correções na revisão de rotas e melhorias nos metadados dos segmentos.
