@@ -10,6 +10,19 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
+## 最新更新：v1.1.0-beta
+
+- 根据 Android 设备语言自动切换的多语言界面。
+- 集中请求相机、麦克风、位置、通知、Bluetooth 和媒体权限。
+- OBD2 Bluetooth 设备显式选择，避免错误连接到 CAR-KIT 或车载多媒体。
+- 在车辆和适配器支持时改进速度、RPM 和油耗的 OBD2 支持。
+- 9x9 拖放式叠加层编辑器，并支持布局持久保存。
+- 透明可配置叠加层，可显示速度、RPM、地图、街道、档位、方向和油耗。
+- 修复地图页面，使录制视频与正确的元数据和 GPS 路线匹配。
+- 支持将视频、元数据、路线和日志上传到 Google Drive。
+- 改进录制片段、元数据、路线查看和应用稳定性。
+
+
 ## 适用于 Android 的后台视频录制应用
 
 GavetRecorder 是一款 Android 应用，通过前台服务在后台录制视频。它适合需要连续本地录制、简单手动安装以及在设备上有序保存文件的用户。
@@ -125,7 +138,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## 当前版本
 
-v1.1.0-beta 包含 OBD2 遥测、9x9 叠加层编辑器、透明叠加层、Google Drive 以及路线/元数据改进。
+当前公开版本：v1.1.0-beta。
 
 ## v1.1.0-beta 新功能
 

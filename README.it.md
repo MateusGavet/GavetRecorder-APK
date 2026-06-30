@@ -10,6 +10,19 @@
 
 <!-- GAVETRECORDER_DOWNLOAD_END -->
 
+## Ultimo aggiornamento: v1.1.0-beta
+
+- Interfaccia multilingue con rilevamento automatico della lingua Android.
+- Richiesta centralizzata dei permessi per fotocamera, microfono, posizione, notifiche, Bluetooth e media.
+- Selettore esplicito del dispositivo Bluetooth OBD2, evitando connessioni errate a CAR-KIT o sistemi multimediali.
+- Supporto OBD2 migliorato per velocità, RPM e consumo quando veicolo e adattatore lo supportano.
+- Editor overlay 9x9 con drag-and-drop e salvataggio persistente.
+- Overlay trasparente configurabile per velocità, RPM, mappa, strada, marcia, direzione e consumo.
+- Scheda Mappa corretta per associare video, metadati e percorsi GPS corretti.
+- Supporto upload Google Drive per video, metadati, percorsi e log.
+- Miglioramenti generali a segmenti, metadati, revisione percorsi e stabilità.
+
+
 ## Registratore video in background per Android
 
 GavetRecorder è un’app Android progettata per registrare video in background tramite un servizio in primo piano. È pensata per utenti che hanno bisogno di registrazione locale continua, installazione manuale semplice e archiviazione organizzata sul dispositivo.
@@ -125,7 +138,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Versione attuale
 
-v1.1.0-beta include telemetria OBD2, editor overlay 9x9, overlay trasparente, Google Drive e miglioramenti a percorsi/metadati.
+Versione pubblica attuale: v1.1.0-beta.
 
 ## Novità di v1.1.0-beta
 
