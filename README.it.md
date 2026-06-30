@@ -100,4 +100,14 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Versione attuale
 
-La V16 include il supporto all’interfaccia multilingue e corregge risorse tradotte usate nella schermata principale, inclusa Qualità/FPS.
+v1.1.0-beta include telemetria OBD2, editor overlay 9x9, overlay trasparente, Google Drive e miglioramenti a percorsi/metadati.
+
+## Novità di v1.1.0-beta
+
+- Overlay di telemetria trasparente e configurabile.
+- Editor overlay 9x9 con drag-and-drop.
+- Telemetria OBD2 Bluetooth per velocità, RPM e consumo se supportata.
+- Marcia stimata da velocità e RPM.
+- Upload manuale e automatico su Google Drive.
+- Correzione mappa per allineare i segmenti registrati.
+- Miglioramenti a metadati, percorsi e log.

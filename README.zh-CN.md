@@ -100,4 +100,14 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## 当前版本
 
-V16 增加了多语言界面支持，并修复了主屏幕使用的翻译资源，包括质量/FPS。
+v1.1.0-beta 包含 OBD2 遥测、9x9 叠加层编辑器、透明叠加层、Google Drive 以及路线/元数据改进。
+
+## v1.1.0-beta 新功能
+
+- 透明且可配置的遥测叠加层。
+- 9x9 拖放式叠加层编辑器。
+- 支持时通过 OBD2 Bluetooth 显示速度、RPM 和油耗。
+- 基于速度和 RPM 的估算档位。
+- Google Drive 手动/自动上传。
+- 修复地图段与录制视频段不一致的问题。
+- 改进元数据、路线和日志存储。

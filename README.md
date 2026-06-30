@@ -54,6 +54,16 @@ Download the latest APK directly from the button above. After downloading, open 
 7. Grant the requested permissions.
 8. Start recording from inside the app.
 
+## What's new in v1.1.0-beta
+
+- Configurable transparent telemetry overlay.
+- 9x9 drag-and-drop overlay editor.
+- OBD2 Bluetooth telemetry for speed, RPM and fuel consumption when supported.
+- Estimated gear based on speed and RPM.
+- Google Drive manual and automatic upload.
+- Route review fixes so map segments match recorded videos.
+- Improved metadata, route and log storage.
+
 ## Permissions used
 
 - Camera: required to record video.
@@ -100,4 +110,4 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Current version
 
-v1.1.0-beta includes OBD2 telemetry, configurable overlay editor, Google Drive upload, route review fixes and improved segment metadata.
+v1.1.0-beta includes OBD2 telemetry, a configurable 9x9 overlay editor, transparent overlay layout, Google Drive upload, route review fixes and improved segment metadata.

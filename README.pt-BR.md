@@ -54,6 +54,16 @@ Baixe o APK mais recente diretamente pelo botão acima. Depois do download, abra
 7. Conceda as permissões solicitadas.
 8. Inicie a gravação dentro do aplicativo.
 
+## Novidades da v1.1.0-beta
+
+- Overlay de telemetria transparente e configurável.
+- Editor de overlay com grade 9x9 e arrastar/soltar.
+- Telemetria OBD2 Bluetooth para velocidade, RPM e consumo quando suportado.
+- Marcha estimada por velocidade e RPM.
+- Envio manual e automático para Google Drive.
+- Correção da aba Mapa para acompanhar os segmentos gravados.
+- Melhorias no armazenamento de metadados, rotas e logs.
+
 ## Permissões utilizadas
 
 - Câmera: necessária para gravar vídeo.
@@ -100,4 +110,4 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## Versão atual
 
-A v1.1.0-beta inclui telemetria OBD2, editor de overlay configurável, envio para Google Drive, correções na revisão de rotas e melhorias nos metadados dos segmentos.
+A v1.1.0-beta inclui telemetria OBD2, editor de overlay 9x9 configurável, overlay transparente, envio para Google Drive, correções na revisão de rotas e melhorias nos metadados dos segmentos.
