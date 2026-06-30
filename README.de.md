@@ -34,6 +34,31 @@ GavetRecorder ist eine Android-App zur Videoaufnahme im Hintergrund über einen 
 
 Laden Sie die neueste APK direkt über die Schaltfläche oben herunter. Öffnen Sie anschließend die Datei auf Ihrem Android-Gerät, um die Installation zu starten.
 
+## Warum eine Dashcam im Fahrzeug verwenden?
+
+Eine Dashcam hilft dabei, eine zuverlässige visuelle Aufzeichnung einer Fahrt zu erstellen. Statt sich nur auf Erinnerung, Aussagen oder manuelle Screenshots zu verlassen, kann der Fahrer organisierte Videos der Straße, Route und wichtiger Fahrdaten speichern.
+
+Sie kann im Alltag, bei Lieferungen, Arbeitsfahrten, Reisen, Parkvorgängen, Routenprüfung, Fahrzeugtests und unerwarteten Verkehrssituationen nützlich sein. Sie hilft, Vorfälle, gefährliche Manöver, Kollisionen, Straßenbedingungen, Uhrzeit, ungefähren Standort und Fahrzeugverhalten zu dokumentieren.
+
+Gavet Recorder verwandelt ein Android-Telefon in eine flexible Dashcam. Die App kombiniert Videoaufnahme, GPS-Route, konfigurierbares Telemetrie-Overlay, OBD2-Bluetooth-Daten und optionalen Google-Drive-Upload.
+
+Wichtigste Vorteile:
+
+- zeichnet Fahrten in kleineren Videosegmenten auf;
+- erleichtert das Finden eines bestimmten Moments;
+- fügt Geschwindigkeit, Route, Straße, Richtung und Fahrzeugdaten zum Video hinzu;
+- hilft bei der Prüfung von Liefer- oder Arbeitsrouten;
+- hilft bei der Analyse von Verbrauch und Fahrverhalten;
+- speichert Videos, Metadaten, Routen und Logs in organisierten Ordnern;
+- kann Dateien bei Aktivierung zu Google Drive hochladen;
+- funktioniert standardmäßig lokal, ohne eigenen Server.
+
+Das Overlay kann Geschwindigkeit, RPM, Karte, Straßennamen, geschätzten Gang, Richtung, Verbrauch, Durchschnittsverbrauch und km/L anzeigen. Der 9x9-Editor ermöglicht die freie Platzierung der Elemente.
+
+Wenn Fahrzeug und Adapter es unterstützen, kann OBD2 Bluetooth stabilere Fahrzeugdaten wie Geschwindigkeit, RPM und Verbrauch liefern. GPS- und Routendateien verbinden das Video mit der gefahrenen Strecke.
+
+Wichtig: Gavet Recorder erstellt Video- und Telemetrieaufzeichnungen, ersetzt aber keine Polizeiberichte, Versicherungsprozesse, Gutachten oder Rechtsberatung. Nutzung gemäß lokalen Gesetzen, Verkehrsregeln und Datenschutz.
+
 ## Voraussetzungen
 
 - Android-Gerät mit Unterstützung für manuelle APK-Installation.

@@ -34,6 +34,31 @@ GavetRecorder es una aplicación Android diseñada para grabar video en segundo 
 
 Descarga el APK más reciente directamente desde el botón superior. Después de descargarlo, abre el archivo en tu dispositivo Android para iniciar la instalación.
 
+## ¿Por qué usar una dashcam en el vehículo?
+
+Una dashcam ayuda a crear un registro visual confiable de lo que ocurre durante un trayecto. En lugar de depender solo de la memoria, relatos o capturas manuales, el conductor puede mantener videos organizados de la carretera, la ruta y datos importantes de conducción.
+
+Puede ser útil para uso diario, entregas, rutas de trabajo, viajes, estacionamiento, revisión de recorridos, pruebas del vehículo y situaciones inesperadas en el tráfico. Ayuda a documentar incidentes, maniobras peligrosas, colisiones, condiciones de la vía, horario, ubicación aproximada y comportamiento del vehículo.
+
+Gavet Recorder convierte un teléfono Android en una dashcam flexible. Combina grabación de video, ruta GPS, overlay de telemetría configurable, datos OBD2 Bluetooth y subida opcional a Google Drive.
+
+Beneficios principales:
+
+- graba viajes en segmentos más pequeños;
+- facilita encontrar un momento específico;
+- agrega velocidad, ruta, calle, dirección y datos del vehículo al video;
+- ayuda a revisar rutas de entrega o trabajo;
+- ayuda a analizar consumo de combustible y conducción;
+- guarda videos, metadatos, rutas y registros en carpetas organizadas;
+- puede subir archivos a Google Drive cuando está activado;
+- funciona localmente por defecto, sin depender de un servidor propio.
+
+El overlay puede mostrar velocidad, RPM, mapa, nombre de calle, marcha estimada, dirección, consumo de combustible, consumo medio y km/L. El editor 9x9 permite elegir qué aparece y dónde se ubica cada elemento.
+
+Cuando el vehículo y el adaptador lo permiten, OBD2 Bluetooth puede proporcionar datos más estables como velocidad, RPM y consumo. El GPS y los archivos de ruta conectan el video con el recorrido realizado.
+
+Importante: Gavet Recorder ayuda a crear registros de video y telemetría, pero no reemplaza informes policiales, aseguradoras, peritajes ni asesoría legal. Úselo respetando leyes locales, normas de tránsito y privacidad.
+
 ## Requisitos
 
 - Dispositivo Android compatible con instalación manual de APK.

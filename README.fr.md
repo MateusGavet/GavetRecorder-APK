@@ -111,3 +111,28 @@ v1.1.0-beta ajoute la télémétrie OBD2, un éditeur d’overlay 9x9, un overla
 - Envoi manuel et automatique vers Google Drive.
 - Correction de la carte pour correspondre aux segments enregistrés.
 - Améliorations des métadonnées, routes et logs.
+
+## Pourquoi utiliser une dashcam dans le véhicule ?
+
+Une dashcam permet de créer un enregistrement visuel fiable de ce qui se passe pendant un trajet. Au lieu de dépendre uniquement de la mémoire, de témoignages ou de captures manuelles, le conducteur peut conserver des vidéos organisées de la route, du trajet et des informations de conduite.
+
+Elle peut être utile au quotidien, pour les livraisons, les trajets professionnels, les voyages, le stationnement, la revue d’itinéraires, les tests du véhicule et les événements inattendus sur la route. Elle aide à documenter les incidents, manœuvres dangereuses, collisions, conditions de route, horaires, position approximative et comportement du véhicule.
+
+Gavet Recorder transforme un téléphone Android en dashcam flexible. Il combine enregistrement vidéo, suivi GPS, overlay de télémétrie configurable, données OBD2 Bluetooth et envoi optionnel vers Google Drive.
+
+Principaux avantages :
+
+- enregistre les trajets en segments plus petits ;
+- facilite la recherche d’un moment précis ;
+- ajoute vitesse, itinéraire, rue, direction et données véhicule à la vidéo ;
+- aide à revoir les trajets de livraison ou de travail ;
+- aide à analyser la consommation et le comportement de conduite ;
+- sauvegarde vidéos, métadonnées, routes et logs dans des dossiers organisés ;
+- peut envoyer les fichiers vers Google Drive si activé ;
+- fonctionne localement par défaut, sans serveur privé.
+
+L’overlay peut afficher vitesse, RPM, carte, nom de rue, rapport estimé, direction, consommation, consommation moyenne et km/L. L’éditeur 9x9 permet de choisir les informations affichées et leur position.
+
+Lorsque le véhicule et l’adaptateur le permettent, OBD2 Bluetooth peut fournir des données plus stables comme la vitesse, les RPM et la consommation. Le GPS et les fichiers de route relient la vidéo au trajet parcouru.
+
+Important : Gavet Recorder aide à créer des enregistrements vidéo et télémétriques, mais ne remplace pas les rapports officiels, assurances, expertises ou conseils juridiques. Utilisez-le selon les lois locales, le code de la route et la confidentialité.

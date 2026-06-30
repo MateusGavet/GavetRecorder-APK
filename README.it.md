@@ -34,6 +34,31 @@ GavetRecorder è un’app Android progettata per registrare video in background 
 
 Scarica l’APK più recente direttamente dal pulsante in alto. Dopo il download, apri il file sul dispositivo Android per avviare l’installazione.
 
+## Perché usare una dashcam nel veicolo?
+
+Una dashcam aiuta a creare una registrazione visiva affidabile di ciò che accade durante un viaggio. Invece di dipendere solo dalla memoria, dai racconti o da screenshot manuali, il conducente può conservare video organizzati della strada, del percorso e dei dati di guida.
+
+Può essere utile nell’uso quotidiano, consegne, lavoro, viaggi, parcheggio, revisione dei percorsi, test del veicolo e situazioni impreviste nel traffico. Aiuta a documentare incidenti, manovre pericolose, collisioni, condizioni della strada, orario, posizione approssimativa e comportamento del veicolo.
+
+Gavet Recorder trasforma un telefono Android in una dashcam flessibile. Combina registrazione video, percorso GPS, overlay di telemetria configurabile, dati OBD2 Bluetooth e upload opzionale su Google Drive.
+
+Vantaggi principali:
+
+- registra i viaggi in segmenti più piccoli;
+- rende più facile trovare un momento specifico;
+- aggiunge velocità, percorso, strada, direzione e dati del veicolo al video;
+- aiuta a rivedere percorsi di consegna o lavoro;
+- aiuta ad analizzare consumo e comportamento di guida;
+- salva video, metadati, percorsi e log in cartelle organizzate;
+- può caricare file su Google Drive se attivato;
+- funziona localmente per impostazione predefinita, senza server proprio.
+
+L’overlay può mostrare velocità, RPM, mappa, nome della strada, marcia stimata, direzione, consumo, consumo medio e km/L. L’editor 9x9 permette di scegliere cosa mostrare e dove posizionarlo.
+
+Quando veicolo e adattatore lo supportano, OBD2 Bluetooth può fornire dati più stabili come velocità, RPM e consumo. GPS e file percorso collegano il video al tragitto effettuato.
+
+Importante: Gavet Recorder aiuta a creare registrazioni video e telemetriche, ma non sostituisce verbali, assicurazioni, perizie o consulenza legale. Usarlo rispettando leggi locali, regole stradali e privacy.
+
 ## Requisiti
 
 - Dispositivo Android compatibile con installazione manuale di APK.
